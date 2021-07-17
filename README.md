@@ -14,4 +14,4 @@
 健康に気を使われている方、将来生活習慣病になりたくない方
 
 ## 画面遷移図
-https://xd.adobe.com/view/90cbc629-d126-44c6-8405-b5e929259f69-c598/
+https://xd.adobe.com/view/785dd602-c187-449f-a5a1-773604ee366d-2d0e/
