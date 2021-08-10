@@ -1,0 +1,24 @@
+current directory: /Users/urakamitakuya/workspace/portfolio/runteq_app/conve_recipe/vendor/bundle/ruby/2.7.0/gems/puma-4.3.8/ext/puma_http11
+/Users/urakamitakuya/.rbenv/versions/2.7.2/bin/ruby -I /Users/urakamitakuya/.rbenv/versions/2.7.2/lib/ruby/2.7.0 -r ./siteconf20210810-43372-qxkpua.rb extconf.rb --with-cflags\=-Wno-error\=implicit-function-declaration
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+checking for DTLS_method() in openssl/ssl.h... yes
+checking for TLS_server_method() in openssl/ssl.h... yes
+checking for SSL_CTX_set_min_proto_version in openssl/ssl.h... yes
+creating Makefile
+
+current directory: /Users/urakamitakuya/workspace/portfolio/runteq_app/conve_recipe/vendor/bundle/ruby/2.7.0/gems/puma-4.3.8/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/urakamitakuya/workspace/portfolio/runteq_app/conve_recipe/vendor/bundle/ruby/2.7.0/gems/puma-4.3.8/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.bundle
+
+current directory: /Users/urakamitakuya/workspace/portfolio/runteq_app/conve_recipe/vendor/bundle/ruby/2.7.0/gems/puma-4.3.8/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20210810-43372-14kty3v/puma
