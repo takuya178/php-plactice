@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
-  database: conve_recipe_production
-  username: conve_recipe
+  database: <%= ENV['CONVE_RECIPE_DATABASE'] %>
+  username: <%= ENV['CONVE_RECIPE_DATABASE_USERNAME'] %>
   password: <%= ENV['CONVE_RECIPE_DATABASE_PASSWORD'] %>
+  host: <%= ENV['CONVE_RECIPE_DATABASE_HOST'] %>
