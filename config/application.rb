@@ -32,11 +32,19 @@ module ConveRecipe
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    config.i18n.available_locales = %i[ja en]
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
     config.generators do |g|
       g.assets false
       g.helper false
       g.skip_routes true
-      g.test_framework false
+      g.test_framework :rspec,
+                       fixtures: false,
+                       view_spaces: false,
+                       helper_spaces: false,
+                       routing_spaces: false
     end
   end
 end
