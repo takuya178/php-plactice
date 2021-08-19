@@ -6,10 +6,16 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_back_or_to root_path
+      redirect_back_or_to root_path, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
+  end
+
+  def destroy
+    logout
+    redirect_to root_path
   end
 
   private
