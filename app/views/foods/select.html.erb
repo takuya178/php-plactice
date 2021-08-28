@@ -1,0 +1,41 @@
+複数選択可
+<div id="js-tab" class="class">
+  <div class="card">
+    <div class="row">
+      <%= link_to "#", class: "button", id: "js-sugar-select", "data-turbolinks": false do %>
+        <div class="example">
+          <%= image_tag("rice.jpg", size: "900x500", class: "w-100") %>
+          <h2 class="text-select" id="js-sugar-text" style="display: block;">糖質</h2>
+          <h2 class="text-check" id="js-sugar-check" style="display: none;">✔︎</h2>
+        </div>   
+      <% end %>
+    </div>
+  </div>
+  <div class="card">
+    <div class="row">
+      <%= link_to "#", class: "button", id: "js-lipid-select", "data-turbolinks": false do %>
+        <div class="example">
+          <%= image_tag("oil.jpg", size: "900x500", class: "w-100") %>
+          <h2 class="text-select" id="js-lipid-text" style="display: block";>脂質</h2>
+          <h2 class="text-check" id="js-lipid-check" style="display: none;">✔︎</h2>
+        </div>   
+      <% end %>
+    </div>
+  </div>
+  <div class="card">
+    <div class="row">
+      <%= link_to "#", class: "button", id: "js-salt-select", "data-turbolinks": false do %>
+        <div class="example">
+          <%= image_tag("salt.jpg", size: "900x500", class: "w-100 filter") %>
+          <h2 class="text-select" id="js-salt-text" style="display: block;">塩分</h2>
+          <h2 class="text-check" id="js-salt-check" style="display: none;">✔︎</h2>
+        </div>   
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'home/select' %>
+
+
+
