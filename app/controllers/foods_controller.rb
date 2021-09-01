@@ -1,11 +1,15 @@
 class FoodsController < ApplicationController
+
   def index
-    @noodles = Noodle.all
-    @noodle_sub = NoodleSub.all
-    @noodle_intermediate = NoodleIntermediate.all
   end
 
   def select; end
+
+  def result
+    @main = Main.all
+    binding.pry
+    @main = params[:tag]
+  end
 
   def genre_select; end
 end

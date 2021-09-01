@@ -1,41 +1,42 @@
 複数選択可
-<div id="js-tab" class="class">
+<div class="class">
   <div class="card">
     <div class="row">
-      <%= link_to "#", class: "button", id: "js-sugar-select", "data-turbolinks": false do %>
+      <%= link_to "#", class: "button", id: "js-sugar-select", data: {id: Main.find_by(name: "ピリ辛！ねぎたっぷり豚骨焼きラーメン").id}, "data-turbolinks": false do %>
         <div class="example">
-          <%= image_tag("rice.jpg", size: "900x500", class: "w-100") %>
+          <%= image_tag("rice.jpg", size: "900x500", class: "w-100", id: "js-sugar-image") %>
           <h2 class="text-select" id="js-sugar-text" style="display: block;">糖質</h2>
-          <h2 class="text-check" id="js-sugar-check" style="display: none;">✔︎</h2>
+          <h2 class="text-check" id="js-sugar-check" style="display: none;"></h2>
         </div>   
       <% end %>
     </div>
   </div>
   <div class="card">
     <div class="row">
-      <%= link_to "#", class: "button", id: "js-lipid-select", "data-turbolinks": false do %>
+      <%= link_to "#", class: "button", id: "js-lipid-select", data: {name: 'lipid'}, "data-turbolinks": false do %>
         <div class="example">
-          <%= image_tag("oil.jpg", size: "900x500", class: "w-100") %>
-          <h2 class="text-select" id="js-lipid-text" style="display: block";>脂質</h2>
-          <h2 class="text-check" id="js-lipid-check" style="display: none;">✔︎</h2>
+          <%= image_tag("oil.jpg", size: "900x500", class: "w-100", id: "js-lipid-image") %>
+          <h2 class="text-select" id="js-lipid-text" style="display: block;">脂質</h2>
+          <p class="text-check" id="js-lipid-check" style="display: none;"></p>
         </div>   
       <% end %>
     </div>
   </div>
   <div class="card">
     <div class="row">
-      <%= link_to "#", class: "button", id: "js-salt-select", "data-turbolinks": false do %>
+      <%= link_to "#", class: "button", id: "js-lipid-select", data: {name: 'lipid'}, "data-turbolinks": false do %>
         <div class="example">
-          <%= image_tag("salt.jpg", size: "900x500", class: "w-100 filter") %>
+          <%= image_tag("salt.jpg", size: "900x500", class: "w-100", id: "js-salt-image") %>
           <h2 class="text-select" id="js-salt-text" style="display: block;">塩分</h2>
-          <h2 class="text-check" id="js-salt-check" style="display: none;">✔︎</h2>
+          <h2 class="text-check" id="js-salt-check" style="display: none;"></h2>
         </div>   
       <% end %>
     </div>
   </div>
+  <%= link_to "/foods" do %>
+  <button type="button" class="btn btn-primary" id="js-button">食べたいジャンルを選ぶ
+  </button>
+  <% end %>
 </div>
 
 <%= javascript_pack_tag 'home/select' %>
-
-
-
