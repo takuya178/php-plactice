@@ -1,0 +1,16 @@
+
+<% if @sugar.nil? %>
+<% elsif @sugar.component.include?('sugar') %>
+<h2>糖質だこのやろう</h2>
+<% end %>
+
+
+<% if @lipid.nil? %>
+<% elsif @lipid.component.include?('lipid') %>
+<h2>脂質だこのやろう</h2>
+<% end %>
+
+<% if @salt.nil? %>
+<% elsif @salt.component.include?('salt') %>
+<h2>塩分だこのやろう</h2>
+<% end %>
