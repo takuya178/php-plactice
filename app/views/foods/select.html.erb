@@ -2,7 +2,7 @@
 <div class="class">
   <div class="card">
     <div class="row">
-      <%= link_to "#", class: "button", id: "js-sugar-select", data: {id: Main.find_by(name: "ピリ辛！ねぎたっぷり豚骨焼きラーメン").id}, "data-turbolinks": false do %>
+      <%= link_to "#", class: "button", id: "js-sugar-select", data: {name: 'sugar'}, "data-turbolinks": false do %>
         <div class="example">
           <%= image_tag("rice.jpg", size: "900x500", class: "w-100", id: "js-sugar-image") %>
           <h2 class="text-select" id="js-sugar-text" style="display: block;">糖質</h2>
@@ -24,7 +24,7 @@
   </div>
   <div class="card">
     <div class="row">
-      <%= link_to "#", class: "button", id: "js-lipid-select", data: {name: 'lipid'}, "data-turbolinks": false do %>
+      <%= link_to "#", class: "button", id: "js-salt-select", data: {name: 'salt'}, "data-turbolinks": false do %>
         <div class="example">
           <%= image_tag("salt.jpg", size: "900x500", class: "w-100", id: "js-salt-image") %>
           <h2 class="text-select" id="js-salt-text" style="display: block;">塩分</h2>
