@@ -8,6 +8,18 @@ Tag.create!(
     },
     {
       component: 'salt'
+    },
+    {
+      genre: 'noodle'
+    },
+    {
+      genre: 'rice'
+    },
+    {
+      genre: 'bread'
+    },
+    {
+      genre: 'snack'
     }
   ]
 )

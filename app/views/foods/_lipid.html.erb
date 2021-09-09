@@ -1,0 +1,10 @@
+<% if @lipid.nil? %>
+<% elsif @lipid && @component_params.size == 1 && @noodle %>
+<h2>脂質、麺類</h2>
+<% elsif @lipid && @component_params.size == 1 && @rice %>
+<h2>脂質、ご飯類</h2>
+<% elsif @lipid && @component_params.size == 1 && @bread %>
+<h2>脂質、パン類</h2>
+<% elsif @lipid && @component_params.size == 1 && @snack %>
+<h2>脂質、お菓子類</h2>
+<% end %>

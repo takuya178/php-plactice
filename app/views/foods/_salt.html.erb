@@ -1,0 +1,10 @@
+<% if @salt.nil? %>
+<% elsif @salt && @component_params.size == 1 && @noodle %>
+<h2>塩分、麺類</h2>
+<% elsif @salt && @component_params.size == 1 && @rice %>
+<h2>塩分、ご飯類</h2>
+<% elsif @salt && @component_params.size == 1 && @bread %>
+<h2>塩分、パン類</h2>
+<% elsif @salt && @component_params.size == 1 && @snack %>
+<h2>塩分、お菓子類</h2>
+<% end %>

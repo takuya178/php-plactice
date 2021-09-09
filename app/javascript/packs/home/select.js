@@ -1,79 +1,64 @@
-
-
-  const $tab = document.getElementById('tab')
-  const $link = $tab.querySelectorAll('a')
-  const $img = $tab.querySelectorAll('img')
-  const $text = $tab.querySelectorAll('h2')
-  const $check = $tab.querySelectorAll('h1')
-
-  const sugarId = [];
-  const lipidId = [];
-  const saltId = [];
-
+  const $tab = document.getElementById('tab');
+  const $link = $tab.querySelectorAll('a');
+  const $img = $tab.querySelectorAll('img');
+  const $text = $tab.querySelectorAll('h2');
+  const $check = $tab.querySelectorAll('h1');
+  const component = document.querySelector('#js-component');
+  const genre = document.querySelector('#js-genre');
   const button = document.querySelector('#js-button');
+
+  const componentId = [];
+  const genreId = [];
 
   const handleClick = (e) => {
     e.preventDefault();
   }
 
+  // 成分画像をクリックしたときの動作
+  for(let i = 0; i < 3; i++) {
+    $link[i].addEventListener('click', (e) => {
+      handleClick(e)
+      if($text[i].style.display == 'block') {
+        $text[i].style.display = 'none'
+        $check[i].style.display = 'block'
+        componentId.push($link[i].dataset.id)
+      } else {
+        $text[i].style.display = 'block'
+        $check[i].style.display = 'none'
+        componentId.pop($link[i].dataset.id)
+      }
+      console.log(componentId)
+      $img[i].classList.toggle('filter');
+    });
+  }
 
-  // 糖質部分がクリックされた処理
-  $link[0].addEventListener('click', (e) => {
-    handleClick(e)
-    if($text[0].style.display == 'block') {
-      $text[0].style.display = 'none'
-      $check[0].style.display = 'block'
-      sugarId.push($link[0].dataset.id)
-    } else {
-      $text[0].style.display = 'block'
-      $check[0].style.display = 'none'
-      sugarId.pop($link[0].dataset.id)
-    }
-    console.log(sugarId)
-    $img[0].classList.toggle('filter');
+  // ジャンル選択画面へ
+  button.addEventListener('click', () => {
+    component.style.display = 'none'
+    genre.style.display = 'block'
   });
 
-  // 脂質部分がクリックされた処理
-  $link[1].addEventListener('click', (e) => {
-    handleClick(e)
-    if($text[1].style.display == 'block') {
-      $text[1].style.display = 'none'
-      $check[1].style.display = 'block'
-      lipidId.push($link[1].dataset.id)
-    } else {
-      $text[1].style.display = 'block'
-      $check[1].style.display = 'none'
-      lipidId.pop($link[1].dataset.id)
-    }
-    $img[1].classList.toggle('filter');
-  });
-
-  // 塩分がクリックされた処理
-  $link[2].addEventListener('click', (e) => {
-    handleClick(e)
-    if($text[2].style.display == 'block') {
-      $text[2].style.display = 'none'
-      $check[2].style.display = 'block'
-      saltId.push($link[2].dataset.id)
-    } else {
-      $text[2].style.display = 'block'
-      $check[2].style.display = 'none'
-      saltId.pop($link[2].dataset.id)
-    }
-    $img[2].classList.toggle('filter');
-  });
 
   // ボタンを押して/resultページへ
-  button.addEventListener('click', () => {
-    $.ajax({
-      type: 'get',
-      url: '/foods/result',
-      data: {
-        sugar: sugarId,
-        lipid: lipidId,
-        salt: saltId, 
-      }
-    }).done(() => {
-      window.location.href = '/foods/result?sugar%5B%5D=' + sugarId + '&lipid%5B%5D=' + lipidId + '&salt%5B%5D=' + saltId;
+  for(let i = 3; i < 7; i++) {
+    $link[i].addEventListener('click', () => {
+      genreId.push($link[i].dataset.id)
+
+      $.ajax({
+        type: 'get',
+        url: '/foods/result',
+        data: {
+          component: componentId,
+          genre: genreId
+        }
+      }).done(() => {
+        if (componentId.length == 1) {
+          window.location.href = '/foods?component%5B%5D=' + componentId[0] + '&genre%5B%5D=' + genreId;
+        } else if (componentId.length == 2) {
+          window.location.href = '/foods?component%5B%5D=' + componentId[0] + '&component%5B%5D=' + componentId[1] + '&genre%5B%5D=' + genreId;
+        } else if (componentId.length == 3) {
+          window.location.href = '/foods?component%5B%5D=' + componentId[0] + '&component%5B%5D=' + componentId[1] + '&component%5B%5D=' + componentId[2] + '&genre%5B%5D=' + genreId;
+        }
+      });
     });
-  });
+  }
