@@ -1,0 +1,37 @@
+<% if @sugar.nil? && @lipid.nil? &&  @salt.nil? %>
+<% elsif @sugar && @lipid && @component_params.size == 2 && @noodle %>
+<h2>糖質、脂質、麺類</h2>
+<% elsif @sugar && @lipid && @component_params.size == 2 && @rice %>
+<h2>糖質、脂質、ご飯類</h2>
+<% elsif @sugar && @lipid && @component_params.size == 2 && @bread %>
+<h2>糖質、脂質、パン類</h2>
+<% elsif @sugar && @lipid && @component_params.size == 2 && @snack %>
+<h2>糖質、脂質、お菓子類</h2>
+
+<% elsif @lipid && @salt && @component_params.size == 2 && @noodle %>
+<h2>脂質、塩分、麺類</h2>
+<% elsif @lipid && @salt && @component_params.size == 2 && @rice %>
+<h2>脂質、塩分、ご飯類</h2>
+<% elsif @lipid && @salt && @component_params.size == 2 && @bread %>
+<h2>脂質、塩分、パン類</h2>
+<% elsif @lipid && @salt && @component_params.size == 2 && @snack %>
+<h2>脂質、塩分、お菓子類</h2>
+
+<% elsif @sugar && @salt && @component_params.size == 2 && @noodle %>
+<h2>糖質、塩分、麺類</h2>
+<% elsif @sugar && @salt && @component_params.size == 2 && @rice %>
+<h2>糖質、塩分、ご飯類</h2>
+<% elsif @sugar && @salt && @component_params.size == 2 && @bread %>
+<h2>糖質、塩分、パン類</h2>
+<% elsif @sugar && @salt && @component_params.size == 2 && @snack %>
+<h2>糖質、塩分、お菓子類</h2>
+
+<% elsif @sugar && @lipid && @salt && @noodle %>
+<h2>糖質、脂質、塩分、麺類</h2>
+<% elsif @sugar && @lipid && @salt && @rice %>
+<h2>糖質、脂質、塩分、ご飯類</h2>
+<% elsif @sugar && @lipid && @salt && @bread %>
+<h2>糖質、脂質、塩分、お菓子類</h2>
+<% elsif @sugar && @lipid && @salt && @snack %>
+<h2>糖質、脂質、塩分、お菓子類</h2>
+<% end %>

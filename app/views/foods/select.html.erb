@@ -1,42 +1,91 @@
 複数選択可
-<div class="class" id="tab">
-  <div class="card">
-    <div class="row">
-      <%= link_to "#", class: "button", id: "js-sugar-select", data: {id: Tag.find_by(component: "sugar").id}, "data-turbolinks": false do %>
-        <div class="example">
-          <%= image_tag("rice.jpg", size: "900x500", class: "w-100", id: "js-sugar-image") %>
-          <h2 class="text-select" id="js-sugar-text" style="display: block;">糖質</h2>
-          <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
-        </div>   
-      <% end %>
+<div class="select" id="tab">
+  <div class="component" id="js-component">
+    <div class="card">
+      <div class="row">
+        <%= link_to "#", class: "button", data: {id: Tag.find_by(component: "sugar").id}, "data-turbolinks": false do %>
+          <div class="example">
+            <%= image_tag("sugar.jpg", size: "900x500", class: "w-100") %>
+            <h2 class="text-select" style="display: block;">糖質</h2>
+            <h1 class="text-check" style="display: none;"></h1>
+          </div>   
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="row">
-      <%= link_to "#", class: "button", id: "js-lipid-select", data: {id: Tag.find_by(component: "lipid").id}, "data-turbolinks": false do %>
-        <div class="example">
-          <%= image_tag("oil.jpg", size: "900x500", class: "w-100", id: "js-lipid-image") %>
-          <h2 class="text-select" id="js-lipid-text" style="display: block;">脂質</h2>
-          <h1 class="text-check" id="js-lipid-check" style="display: none;"></h1>
-        </div>   
-      <% end %>
+    <div class="card">
+      <div class="row">
+        <%= link_to "#", class: "button", data: {id: Tag.find_by(component: "lipid").id}, "data-turbolinks": false do %>
+          <div class="example">
+            <%= image_tag("lipid.jpg", size: "900x500", class: "w-100") %>
+            <h2 class="text-select" style="display: block;">脂質</h2>
+            <h1 class="text-check" style="display: none;"></h1>
+          </div>   
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="row">
-      <%= link_to "#", class: "button", id: "js-salt-select", data: {id: Tag.find_by(component: "salt").id}, "data-turbolinks": false do %>
-        <div class="example">
-          <%= image_tag("salt.jpg", size: "900x500", class: "w-100", id: "js-salt-image") %>
-          <h2 class="text-select" id="js-salt-text" style="display: block;">塩分</h2>
-          <h1 class="text-check" id="js-salt-check" style="display: none;"></h1>
-        </div>   
-      <% end %>
+    <div class="card">
+      <div class="row">
+        <%= link_to "#", class: "button", data: {id: Tag.find_by(component: "salt").id}, "data-turbolinks": false do %>
+          <div class="example">
+            <%= image_tag("salt.jpg", size: "900x500", class: "w-100") %>
+            <h2 class="text-select" style="display: block;">塩分</h2>
+            <h1 class="text-check" style="display: none;"></h1>
+          </div>   
+        <% end %>
+      </div>
     </div>
+    <button type="button" class="btn btn-primary" id="js-button">食べたいジャンルを選ぶ
+    </button>
   </div>
 
-  <button type="button" class="btn btn-primary" id="js-button">食べたいジャンルを選ぶ
-  </button>
-
+  <div class="genre" id="js-genre">
+    <div class="card">
+      <div class="row">
+        <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "noodle").id}, "data-turbolinks": false do %>
+          <div class="example">
+            <%= image_tag("noodle.jpg", size: "900x500", class: "w-100") %>
+            <h2 class="text-select" id="js-sugar-text" style="display: block;">麺類</h2>
+            <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "rice").id}, "data-turbolinks": false do %>
+          <div class="example">
+            <%= image_tag("bento.jpg", size: "900x500", class: "w-100") %>
+            <h2 class="text-select" id="js-sugar-text" style="display: block;">ご飯類</h2>
+            <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "bread").id}, "data-turbolinks": false do %>
+          <div class="example">
+            <%= image_tag("bread.jpg", size: "900x500", class: "w-100") %>
+            <h2 class="text-select" id="js-sugar-text" style="display: block;">パン類</h2>
+            <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "snack").id}, "data-turbolinks": false do %>
+          <div class="example">
+            <%= image_tag("candy.jpg", size: "900x500", class: "w-100") %>
+            <h2 class="text-select" id="js-sugar-text" style="display: block;">お菓子類</h2>
+            <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 <%= javascript_pack_tag 'home/select' %>
