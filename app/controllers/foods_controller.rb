@@ -1,3 +1,5 @@
+require 'mechanize'
+
 class FoodsController < ApplicationController
   def index
     @component_params = params[:component]

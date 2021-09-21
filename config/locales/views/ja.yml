@@ -3,6 +3,9 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    show: '詳細'
+    edit: '編集'
+    delete: '削除'
     message:
       require_login: 'ログインしてください'
   users:
@@ -32,3 +35,4 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+  
