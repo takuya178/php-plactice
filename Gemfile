@@ -34,7 +34,6 @@ gem "aws-sdk-s3", require: false
 gem 'seed-fu'
 gem 'pagy'
 gem 'ransack'
-
 gem 'kaminari'
 
 group :development, :test do
