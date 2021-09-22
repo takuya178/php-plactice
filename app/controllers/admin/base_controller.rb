@@ -1,6 +1,6 @@
 class Admin::BaseController < ApplicationController
   layout 'admin/layouts/application'
-  # before_action :check_admin
+  before_action :check_admin
 
   private
 
@@ -9,7 +9,7 @@ class Admin::BaseController < ApplicationController
     redirect_to admin_login_path
   end
 
-  # def check_admin
-  #   redirect_to root_path, warning: '権限がありません' unless current_user.admin?
-  # end
+  def check_admin
+    redirect_to root_path, warning: '権限がありません' unless current_user.admin?
+  end
 end
