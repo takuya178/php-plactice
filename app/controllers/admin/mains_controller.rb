@@ -14,28 +14,27 @@ class Admin::MainsController < Admin::BaseController
     @main = Main.new(main_params)
 
     if @main.save
-      redirect_to new_admin_main_path, success: "おつまみを追加しました"
+      redirect_to new_admin_main_path, success: 'おつまみを追加しました'
     else
-      flash.now[:danger] = "おつまみを追加に失敗しました"
+      flash.now[:danger] = 'おつまみを追加に失敗しました'
       render :new
     end
   end
 
   def edit; end
-  
+
   def show; end
 
   def update
     if @main.update(main_params)
-      redirect_to admin_main_path(@main), success: "更新に成功しました"
+      redirect_to admin_main_path(@main), success: '更新に成功しました'
     else
-      flash.now[:danger] = "更新に失敗しました"
+      flash.now[:danger] = '更新に失敗しました'
       render :edit
     end
   end
 
-  def destroy
-  end
+  def destroy; end
 
   private
 

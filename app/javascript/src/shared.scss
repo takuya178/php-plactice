@@ -1,3 +1,27 @@
 .alert {
   margin-bottom: 0;
 }
+.alert-message {
+  color: red;
+  position: relative;
+}
+.alert-text {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  padding: 0;
+}
+.contact-item-input {
+  margin-bottom: 60px;
+}
+
+// 
+// メディアクエリ
+@media (max-width: 480px) {
+  .alert-message {
+    font-size: 12px;
+  }
+  .contact-item-input {
+    margin-bottom: 45px;
+  }
+}

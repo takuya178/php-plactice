@@ -12,18 +12,18 @@ a {
   text-decoration: none;
 }
 
-// 
-// top
-// 
+// // 
+// // top
+// // 
 .top {
-  // background-image: image-url("../../assets/images/main.jpg");
   position: relative;
 }
 .top-picture {
+  // background-image: image-url("main.jpg");
   background-image: url(../../assets/images/main.jpg);
   background-size: cover;
   height: 800px;
-  padding-top: 55.67%;
+  padding-top: 54.67%;
 }
 .top-message {
   position: absolute;
@@ -39,7 +39,7 @@ a {
     font-size: 20px;
   }
 }
-.button {
+.top-button {
   position: absolute;
   left: 38%;
   top: 41%;
@@ -47,9 +47,9 @@ a {
 }
 
 
-// 
-// login button
-// 
+// // 
+// // login button
+// // 
 .btn-square-shadow {
   display: inline-block;
   padding: 0.5em 1em;
@@ -92,7 +92,7 @@ a {
 .consept {
   background-color: none;
 }
-.card::before {
+.concept-card::before {
   display: none;
 }
 
@@ -200,8 +200,9 @@ a {
 
 // 
 // concept
-// 
-.card {
+
+.concept-card {
   display: flex;
 }
 }
+

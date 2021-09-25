@@ -46,7 +46,7 @@
 
       $.ajax({
         type: 'get',
-        url: '/foods/result',
+        url: '/foods',
         data: {
           component: componentId,
           genre: genreId

@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'ログイン・ログアウト' do
-  let(:user) { create(:user) }
-
-  describe '通常画面' do
     describe 'ログイン' do
+      let(:user) { create(:user) }
       context '認証情報が正しい場合' do
         it 'ログインできること' do
           visit '/login'
@@ -26,5 +24,4 @@ RSpec.describe 'ログイン・ログアウト' do
         end
       end
     end
-  end
 end

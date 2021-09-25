@@ -23,11 +23,11 @@
         </div>
         </div>
         <div class="contact-button">
-          <%= f.submit 'ログイン', class: 'btn-square-shadow login' %>
+          <%= f.submit t('.title'), class: 'btn-square-shadow login' %>
         </div>
       <% end %>
       <div class='contact-text-bottom'>
-        <%= link_to '登録ページへ', new_user_path, class: 'contact-text-user' %>
+        <%= link_to t('.to_register_page'), new_user_path, class: 'contact-text-user' %>
         <a href="#">パスワードをお忘れの方はこちら</a>
       </div>
     </div>

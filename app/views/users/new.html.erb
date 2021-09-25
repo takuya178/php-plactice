@@ -6,12 +6,14 @@
       <h1>ユーザー登録</h1>
     </div>
       <%= form_with model: @user, local: true do |f| %>
+
         <div class="form-group">
           <div class="contact-item-title">
             <%= f.label :name %>
           </div>
           <div class="contact-item-input">
             <%= f.text_field :name, class: 'form-control' %>
+            <%= render 'shared/error_messages', object: f.object, text: :name %>
           </div>
         </div>
         <div class="form-group">
@@ -20,6 +22,7 @@
         </div>
         <div class="contact-item-input">
           <%= f.email_field :email, class: 'form-control' %>
+          <%= render 'shared/error_messages', object: f.object, text: :email %>
         </div>
         </div>
         <div class="form-group">
@@ -28,6 +31,7 @@
         </div>
         <div class="contact-item-input">
           <%= f.password_field :password, class: 'form-control' %>
+          <%= render 'shared/error_messages', object: f.object, text: :password %>
         </div>
         </div>
         <div class="form-group">
@@ -36,6 +40,7 @@
         </div>
         <div class="contact-item-input">
           <%= f.password_field :password_confirmation, class: 'form-control' %>
+          <%= render 'shared/error_messages', object: f.object, text: :password_confirmation %>
         </div>
         </div>
         <div class="contact-button">
