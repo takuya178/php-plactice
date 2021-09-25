@@ -7,12 +7,12 @@
       <p>コンビニ食品を健康的に選択</p>
       <p>自分の気になる成分からメイン食品とそれに合うプラス1品を提案します。</p>
     </div>
-    <div class="button">
+    <div class="top-button">
       <div class="login">
-        <%= link_to "ログイン", login_path, class: 'btn-square-shadow' %>
+        <%= link_to t('.login'), login_path, class: 'btn-square-shadow' %>
       </div>
       <div class="guest">
-        <%= link_to "ゲストログイン" '#', class: 'btn-square-shadow' %>
+        <%= link_to t('.guest_login'), '#', class: 'btn-square-shadow' %>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
     <h2 class="section-title">まずは自分が控えたい成分を選択</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
-        <div class="card h-100 mt-md-10">
+        <div class="card concept-card h-100 mt-md-10">
             <%= image_tag("sugar-pasta.jpg" ) %>
           <div class="card-body">
             <h5 class="card-title">炭水化物</h5>

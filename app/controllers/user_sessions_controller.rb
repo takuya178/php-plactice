@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  skip_before_action :require_login, only: %i[new create]
+
   def new; end
 
   def create
@@ -9,5 +11,11 @@ class UserSessionsController < ApplicationController
       flash.now[:danger] = t('.fail')
       render :new
     end
+  end
+
+  def destroy
+    logout
+    flash[:success] = 'ログアウトしました'
+    redirect_to root_path
   end
 end

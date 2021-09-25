@@ -8,6 +8,10 @@ ja:
     delete: '削除'
     message:
       require_login: 'ログインしてください'
+  static_pages:
+    home:
+      login: 'ログイン'
+      guest_login: 'ゲストログイン'
   users:
     new:
       title: 'ユーザー登録'
@@ -25,6 +29,9 @@ ja:
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
+  foods:
+    index:
+      title: '組み合わせを選ぶ'
   boards:
     index:
       title: '掲示板一覧'

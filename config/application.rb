@@ -20,6 +20,10 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+if Rails.env.test?
+  OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+end
+
 module ConveRecipe
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
