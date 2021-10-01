@@ -1,0 +1,41 @@
+<% if @lipid.nil? %>
+
+<% elsif @lipid && @component_params.size == 1 && @noodle %>
+<h2>脂質、麺類</h2>
+<div class="food">
+  <% @foods.each do |food| %>
+    <% if food.main.genre == 'noodle' %>
+      <div class="food_flex">
+        <div class="main">
+          <%= food.main.name %>
+        </div>
+        <div class="sub">
+          <%= food.sub.name %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<% elsif @lipid && @component_params.size == 1 && @rice %>
+<h2>脂質、ご飯類</h2>
+<div class="food">
+  <% @foods.each do |food| %>
+    <% if food.main.genre == 'rice' %>
+      <div class="food_flex">
+        <div class="main">
+          <%= food.main.name %>
+        </div>
+        <div class="sub">
+          <%= food.sub.name %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<% elsif @lipid && @component_params.size == 1 && @bread %>
+<h2>脂質、パン類</h2>
+<% elsif @lipid && @component_params.size == 1 && @snack %>
+<h2>脂質、お菓子類</h2>
+<% end %>

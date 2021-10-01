@@ -1,3 +1,23 @@
+.food-select-top {
+  background-color: #F0E5CF;
+}
+.food-select-message {
+  text-align: center;
+  h1 {
+    color: #86340A;
+    font-weight: bold;
+    font-size: 52px;
+    margin-bottom: 30px;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 30px;
+    color: #86340A;
+    margin-bottom: 30px;
+  }
+}
+
 .select-card {
   position: relative;
 
@@ -43,14 +63,14 @@
   transform: translate(-50%,-50%);
   margin:0;
   padding:0;
-  }
+}
 
 .filter {
   display: block;
   opacity: .1;
 }
 
-.btn {
+.genre-button {
   padding: 30px 80px;
   margin: 80px auto;
   display: block;
@@ -60,3 +80,90 @@
 .genre {
   display: none;
 }
+
+.select-img {
+  max-width: 1300px;
+  max-height: 700px;
+}
+
+
+// 
+// food画面
+// 
+.food_combi_contain {
+  display: flex;
+  margin-bottom: 100px;
+}
+.food_combi_flex {
+  margin-right: 50px;
+  width: 300px;
+  text-align: center;
+}
+// .food_select_compo {
+//   text-align: center;
+// }
+
+
+
+// 
+// メディアクエリ
+@media (max-width: 480px) {
+
+  // selectページ
+  .food-select-message {
+    .food-message-top {
+      color: #86340A;
+      font-weight: bold;
+      font-size: 17px;
+      margin-bottom: 10px;
+    }
+    .food-message-sub {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 13px;
+      color: #86340A;
+    }
+  }
+
+  .text-select {
+    font-size: 50px;
+  }
+
+  .example {
+    position: relative;
+  
+    .text-check {
+      position: absolute;
+      content: "";
+      top: 37%;
+      left: 40%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+      width: 85px;
+      height: 38px;
+      border-left: 9px solid #25AF01;
+      border-bottom: 9px solid #25AF01;
+      transform: rotate(
+  -45deg);
+    }
+  }
+
+  .genre-button {
+    padding: 19px 85px;
+    margin: 40px auto;
+    display: block;
+    font-size: 16px;
+}
+
+
+
+
+  .food_combi_contain {
+    display: block;
+  }
+  .food_combi_flex {
+    width: 100%;
+  }
+}
+

@@ -1,0 +1,67 @@
+<% if @sugar.nil? %>
+
+<% elsif @sugar && @component_params.size == 1 && @noodle %>
+<div class="food_select_back">
+  <h2>糖質、麺類</h2>
+  <div class="food_select container">
+    <% @foods.each do |food| %>
+      <% if food.main.genre == 'noodle' %>
+        <div class="food_combi_contain">
+          <div class="food_combi_flex">
+            <div class="food_combi_main">
+              <%= food.main.name %>
+            </div>
+            <div class="food_combi_compo">×</div>
+            <div class="food_combi_sub">
+              <%= food.sub.name %>
+            </div>
+            <div class="food_combi_text">
+              <div class="food_combi_price">
+                税込<%= food.prices %>
+              </div>
+
+            </div>
+          </div>
+          <div class="food_graph">
+            <%
+            graph = Main.where(id: food.main_id).pluck(:name, :sugar)
+            graphy = Sub.where(id: food.sub_id).pluck(:name, :sugar)
+            %>
+
+            <%# subs = Sub.where(id: food.main_id).pluck(:name, :sugar) %>
+
+            <% @chart = [
+              {data: graph},
+              {data: graphy}
+            ] %>
+            <%= bar_chart @chart, min: 0, max: 100 %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<% elsif @sugar && @component_params.size == 1 && @rice %>
+<h2>糖質、ご飯類</h2>
+<div class="food_select">
+  <% @foods.each do |food| %>
+    <% if food.main.genre == 'rice' %>
+      <div class="food_flex">
+        <div class="food_select_main">
+          <%= food.main.name %>
+        </div>
+        <div class="food_select_sub">
+          <%= food.sub.name %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<% elsif @sugar && @component_params.size == 1 && @bread %>
+<h2>糖質、パン類</h2>
+<% elsif @sugar && @component_params.size == 1 && @snack %>
+<h2>糖質、お菓子類</h2>
+<% end %>
+

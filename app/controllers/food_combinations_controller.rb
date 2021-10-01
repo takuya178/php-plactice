@@ -1,4 +1,4 @@
-class FoodsController < ApplicationController
+class FoodCombinationsController < ApplicationController
   def index
     @component_params = params[:component]
     genre_params = params[:genre]
@@ -12,6 +12,8 @@ class FoodsController < ApplicationController
     @rice = Tag.find_by(id: genre_ids, genre: 'rice')
     @bread = Tag.find_by(id: genre_ids, genre: 'bread')
     @snack = Tag.find_by(id: genre_ids, genre: 'snack')
+
+    @foods = FoodCombination.eager_load(:main, :sub).all
   end
 
   def select; end
