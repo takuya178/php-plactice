@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_10_001741) do
+ActiveRecord::Schema.define(version: 2021_09_26_223810) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -33,13 +33,15 @@ ActiveRecord::Schema.define(version: 2021_09_10_001741) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "food_intermediates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "food_combinations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "main_id", null: false
     t.bigint "sub_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["main_id"], name: "index_food_intermediates_on_main_id"
-    t.index ["sub_id"], name: "index_food_intermediates_on_sub_id"
+    t.integer "prices"
+    t.integer "stores", default: 0
+    t.index ["main_id"], name: "index_food_combinations_on_main_id"
+    t.index ["sub_id"], name: "index_food_combinations_on_sub_id"
   end
 
   create_table "mains", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -90,6 +92,6 @@ ActiveRecord::Schema.define(version: 2021_09_10_001741) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "food_intermediates", "mains"
-  add_foreign_key "food_intermediates", "subs"
+  add_foreign_key "food_combinations", "mains"
+  add_foreign_key "food_combinations", "subs"
 end

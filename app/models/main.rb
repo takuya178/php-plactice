@@ -1,8 +1,8 @@
 class Main < ApplicationRecord
-  has_many :food_intermediates
-  has_many :subs, through: :food_intermediates
+  has_many :food_combinations
+  has_many :subs, through: :food_combinations
 
   has_one_attached :main
 
-  enum genre: { 麺: 0, ご飯: 1, パン: 2, お菓子: 3 }
+  enum genre: { noodle: 0, rice: 1, bread: 2, candy: 3 }
 end

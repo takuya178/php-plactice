@@ -46,18 +46,18 @@
 
       $.ajax({
         type: 'get',
-        url: '/foods',
+        url: '/food_combinations',
         data: {
           component: componentId,
           genre: genreId
         }
       }).done(() => {
         if (componentId.length == 1) {
-          window.location.href = '/foods?component%5B%5D=' + componentId[0] + '&genre%5B%5D=' + genreId;
+          window.location.href = '/food_combinations?component%5B%5D=' + componentId[0] + '&genre%5B%5D=' + genreId;
         } else if (componentId.length == 2) {
-          window.location.href = '/foods?component%5B%5D=' + componentId[0] + '&component%5B%5D=' + componentId[1] + '&genre%5B%5D=' + genreId;
+          window.location.href = '/food_combinations?component%5B%5D=' + componentId[0] + '&component%5B%5D=' + componentId[1] + '&genre%5B%5D=' + genreId;
         } else if (componentId.length == 3) {
-          window.location.href = '/foods?component%5B%5D=' + componentId[0] + '&component%5B%5D=' + componentId[1] + '&component%5B%5D=' + componentId[2] + '&genre%5B%5D=' + genreId;
+          window.location.href = '/food_combinations?component%5B%5D=' + componentId[0] + '&component%5B%5D=' + componentId[1] + '&component%5B%5D=' + componentId[2] + '&genre%5B%5D=' + genreId;
         }
       });
     });

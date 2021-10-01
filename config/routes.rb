@@ -8,14 +8,14 @@ Rails.application.routes.draw do
 
 
   resources :users, only: %i[new create show]
-  resources :foods, only: %i[new index] do
+  resources :food_combinations, only: %i[new index] do
     collection do
-      get 'select', to: 'foods/select'
-      get 'result', to: 'foods#result'
+      get 'select', to: 'food_combinations/select'
+      get 'result', to: 'food_combinations#result'
     end
   end
 
-  get 'foods', to: 'foods#index'
+  get 'food_combinations', to: 'food_combinations#index'
 
   namespace :admin do
     root 'dashboards#index'
