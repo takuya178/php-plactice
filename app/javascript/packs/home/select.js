@@ -39,6 +39,8 @@
   });
 
 
+
+  
   // ボタンを押して/resultページへ
   for(let i = 3; i < 7; i++) {
     $link[i].addEventListener('click', () => {

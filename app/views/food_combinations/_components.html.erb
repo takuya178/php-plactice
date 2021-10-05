@@ -31,11 +31,11 @@
             </div>
           </div>
           <div class="food_graph">
-            <% @chart = [
-              { data: food.sugar_combination },
-              { data: food.lipid_combination }
+            <% chart = [
+              { name: 'sugar', data: food.sugar_combination },
+              { name: 'lipid', data: food.lipid_combination }
              ] %>
-            <%= bar_chart @chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
+            <%= bar_chart chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
           </div>
         </div>
       <% end %>

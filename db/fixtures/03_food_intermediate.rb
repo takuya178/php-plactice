@@ -38,4 +38,23 @@ FoodCombination.seed(:id,
 { id:19, main_id: 20, sub_id: 30, prices: 561, stores: 'seven'},
 
 { id:20, main_id: 21, sub_id: 17, prices: 587, stores: 'seven'},
+
+{ id:21, main_id: 2, sub_id: 37, prices: 550, stores: 'seven'},
+{ id:22, main_id: 3, sub_id: 34, prices: 610, stores: 'seven'},
+{ id:23, main_id: 21, sub_id: 17, prices: 587, stores: 'seven'},
+
+{ id:24, main_id: 10, sub_id: 35, prices: 456, stores: 'seven'},
+
+{ id:25, main_id: 21, sub_id: 17, prices: 587, stores: 'seven'},
+
+{ id:26, main_id: 12, sub_id: 28, prices: 612, stores: 'seven'},
+
+{ id:27, main_id: 12, sub_id: 38, prices: 720, stores: 'seven'},
+
+{ id:28, main_id: 13, sub_id: 23, prices: 742, stores: 'seven'},
+
+{ id:29, main_id: 15, sub_id: 39, prices: 785, stores: 'seven'},
+
+{ id:30, main_id: 14, sub_id: 40, prices: 664, stores: 'seven'},
+
 )

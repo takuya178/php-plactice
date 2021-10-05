@@ -58,4 +58,26 @@ Sub.seed(:id,
 { id:29, name: 'カップみそ汁長ねぎ', calorie: 49, sugar: 6.9, lipid: 1.2, salt: 1.9 },
 
 { id:30, name: '胡瓜とわかめの酢の物香り箱入り', calorie: 44, sugar: 8.4, lipid: 0.4, salt: 1.7 },
+
+{ id:31, name: 'みそ汁７種の野菜', calorie: 47, sugar: 7.3, lipid: 0.9, salt: 2.2 },
+
+{ id:32, name: 'カップみそ汁あさり', calorie: 34, sugar: 3.8, lipid: 0.8, salt: 2.1 },
+
+{ id:33, name: 'カップみそ汁豚汁', calorie: 102, sugar: 6.8, lipid: 6.3, salt: 2.7 },
+
+{ id:34, name: '手巻おにぎり熟成旨味仕立て紀州南高梅', calorie: 165, sugar: 1.6, lipid: 0.7, salt: 1.6 },
+
+{ id:35, name: '味付のり焼鮭', calorie: 171, sugar: 35.8, lipid: 1.4, salt: 1 },
+
+{ id:36, name: '胡瓜とわかめの酢の物香り箱入り', calorie: 44, sugar: 8.4, lipid: 0.4, salt: 1.7 },
+
+{ id:37, name: '熟成旨味仕立て辛子明太子おにぎり', calorie: 167, sugar: 36.8, lipid: 0.7, salt: 1.1 },
+
+{ id:38, name: '旨塩仕立てのワンタンスープ', calorie: 124, sugar: 14.4, lipid: 3.9, salt: 2.9 },
+
+{ id:39, name: 'まるごとわかめスープ ８袋入', calorie: 20, sugar: 2.2, lipid: 0.9, salt: 1.4 },
+
+{ id:40, name: 'のむヨーグルト プレーン', calorie: 161, sugar: 21.8, lipid: 5.6, salt: 0.2 },
+
+
 )
