@@ -3,69 +3,73 @@
   <div class="top">
     <div class="top-picture"></div>
     <div class="top-message">
-      <h1>health_conve</h1>
+      <h1>healthy_combi</h1>
       <p>コンビニ食品を健康的に選択</p>
-      <p>自分の気になる成分からメイン食品とそれに合うプラス1品を提案します。</p>
-    </div>
-    <div class="top-button">
-      <div class="login">
-        <%= link_to t('.login'), login_path, class: 'btn-square-shadow' %>
-      </div>
-      <div class="guest">
-        <%= link_to t('.guest_login'), '#', class: 'btn-square-shadow' %>
-      </div>
     </div>
   </div>
 
-  <!-- concept --->
-  <section class="consept inner container">
-    <h2 class="section-title">まずは自分が控えたい成分を選択</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card concept-card h-100 mt-md-10">
-            <%= image_tag("sugar-pasta.jpg" ) %>
-          <div class="card-body">
-            <h5 class="card-title">炭水化物</h5>
-            <p class="card-text">エネルギーとして消費されなかった糖質は中性脂肪として蓄積され、肥満や生活習慣病の原因に。</p>
+  <!-- top-bottom --->
+  <section class="top-bottom-page">
+    <div class="top-bottom-page-inner container">
+      <div class="inner">
+        <h2 class="section-title">login</h2>
+        <div class="top-button">
+          <div class="top-bottom-login">
+            <div class="top-bottom-login-btn">
+              <%= link_to t('.login'), login_path, class: 'btn-login-shadow' %>
+            </div>
+            <div class="top-bottom-login-box">
+              <p>本サービスの正規ログイン方法です。<br> 選んだ組み合わせをカレンダーに記録することができます。</p>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col mt-sm-1">
-        <div class="card h-100">
-          <%= image_tag("lipid.jpg") %>
-          <div class="card-body">
-            <h5 class="card-title">脂質</h5>
-            <p class="card-text">血液中の中性脂肪と悪玉コレステロールであるLDL-コレステロールを増加させる一方、善玉コレステロールであるHDL-コレステロールを減少させ、脂質異常症などの様々な生活習慣病の原因
-            に。</p>
-          </div>
-        </div>
-      </div>
-      <div class="col mt-sm-1">
-        <div class="card h-100">
-          <%= image_tag("salt.jpg") %>
-          <div class="card-body">
-            <h5 class="card-title">塩分</h5>
-            <p class="card-text">血液中の塩分濃度が高くなり、それを下げるため、血液量が増えて血管がパンパンになります。大量の血液を流すために血管壁に高い圧力が加わるようになり、高血圧の原因に。</p>
+          <div class="top-bottom-guest">
+            <div class="top-bottom-login-btn">
+              <%= link_to t('.guest_login'), 'guest_login', method: :post, class: 'btn-sub-login-shadow' %>
+            </div>
+            <div class="top-bottom-login-box">
+              <p>ゲストユーザーとしてログインします。<br> 新規登録なしに手軽にサービスをお楽しみいただけます。</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-
-
-
-
-
-
-
-  <section class="consept inner container">
-    <h2 class="section-title">食べたいジャンルを選択しよう</h2>
+  <!-- concept --->
+  <section class="consept container inner">
+  <h2 class="section-title">Concept</h2>
+    <div class="concept-inner">
+      <div class="concept-img">
+        <%= image_tag("boxed.jpg", class: "w-100") %>
+      </div>
+      <div class="concept-text-box">
+        <div class="concept-text-main">
+          <h2>普段の食事で糖質、脂質、塩分が気になる方へ。</h2>
+        </div>
+        <div class="comcept-text-sub">
+          <p>コンビニ食品からあなたの気になる成分を控えた食品の組み合わせを提案します。</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="consept inner container">
-    <h2 class="section-title">自分の選択した条件にマッチしたコンビニ食品の組み合わせを表示</h2>
+
+ <!-- service --->
+  <section class="service service">
+    <div class="service-inner container">
+      <div class="inner">
+        <h2 class="section-title">Service</h2>
+          <div class="service-text-box">
+            <div class="service-text-component">
+              <p>組み合わせ選択を押していただくと、成分を選択できます。</p>
+              <p>ここで自分が気になる成分を選択して下さい。</p>
+            </div>
+            <div class="service-text-genre">
+            <p>次に食べたいジャンルを選ぶことで、組み合わせが表示されます。</p>
+            </div>
+          </div>
+      </div>
+    </div>
   </section>
 
 </div>

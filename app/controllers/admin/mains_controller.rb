@@ -39,7 +39,7 @@ class Admin::MainsController < Admin::BaseController
   private
 
   def main_params
-    params.require(:main).permit(:name, :image, :calorie, :sugar, :lipid, :salt)
+    params.require(:main).permit(:name, :image, :genre, :calorie, :sugar, :lipid, :salt)
   end
 
   def set_main

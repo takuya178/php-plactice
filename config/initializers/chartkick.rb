@@ -1,6 +1,7 @@
 Chartkick.options = {
-  width: '300px',
-  colors: ["#4242ff", "#ffd1a3", "#ffd1a3"],
+  width: '250px',
+  height: '150px',
+
   message: {empty: "データがありません"},
   thousands: ",", 
   legend: false, # 凡例非表示

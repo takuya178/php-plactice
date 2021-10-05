@@ -13,6 +13,10 @@
           <%= f.file_field :image, value: @main.image, class: "form-control" %> 
         </div>
         <div class="form-group">
+          <%= f.label :genre, class: "text-info" %><br>
+          <%= f.select :genre, Main.genres.keys.to_a, {} %>
+        </div>
+        <div class="form-group">
           <%= f.label :calorie, class: "text-info" %><br>
           <%= f.text_field :calorie, value: @main.calorie %>
         </div>

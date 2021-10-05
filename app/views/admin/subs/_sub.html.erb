@@ -1,0 +1,11 @@
+<tr>
+  <td><%= sub.id %></td>
+  <td><%= sub.name %></td>
+  <td><%= sub.image %></td>
+  <td><%= sub.calorie %></td>
+  <td><%= sub.sugar %></td>
+  <td><%= sub.lipid %></td>
+  <td><%= sub.salt %></td>
+  <td> <%= button_to t("defaults.show"),  admin_sub_path(sub), method: :get, class: "btn btn-success" %></td>
+  <td> <%= button_to t("defaults.delete"), edit_admin_sub_path(sub), method: :delete, class: "btn btn-danger" %></td>
+</tr>
