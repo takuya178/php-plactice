@@ -1,11 +1,14 @@
 <% if @salt.nil? %>
 
 <% elsif @salt && @component_params.size == 1 && @noodle %>
-<div class="food_select_back">
+<div class="food_select_back" id='tab'>
   <h2>塩分、麺類</h2>
-  <div class="food_select container">
+  <p class='normal_select' id='normalbtn' >組み合わせ表示</p>
+  <p class='ng_select' id='js-ngbtn' >NG組み合わせ表示</p>
+
+  <div class="food_select container" id='js-normalselect' style="display: block">
     <% @foods.each do |food| %>
-      <% if food.main.genre == 'noodle' %>
+      <% if food.main.genre == 'noodle' && food.main.salt + food.sub.salt < 3 %>
         <div class="food_combi_contain">
           <div class="food_combi_flex">
             <div class="food_combi_flex_inner">
@@ -32,7 +35,44 @@
             </div>
           </div>
           <div class="food_graph">
-            <%# subs = Sub.where(id: food.main_id).pluck(:name, :sugar) %>
+            <% @chart = [
+              { data: food.salt_combination }
+            ] %>
+            <%= bar_chart @chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="food_select container" id="js-ngselect" style="display: none">
+    <% @foods.each do |food| %>
+      <% if food.main.genre == 'noodle' && food.main.salt + food.sub.salt > 3 %>
+        <div class="food_combi_contain">
+          <div class="food_combi_flex">
+            <div class="food_combi_flex_inner">
+              <div class="food_combi_menu_text">
+                <div class="food_combi_title_red">NG組み合わせ</div>
+                <div class="food_combi_menu_inner">
+                  <div class="food_combi_main">
+                    メイン：<%= food.main.name %>
+                  </div>
+                  <div class="food_combi_compo">×</div>
+                  <div class="food_combi_sub">
+                    プラス一品：<%= food.sub.name %>
+                  </div>
+                </div>
+              </div>
+              <div class="food_combi_text">
+                <div class="food_combi_price">
+                  組み合わせ価格： 税込<%= food.prices %>円
+                </div>
+                <div class="food_combi_price">
+                  総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food_graph">
             <% @chart = [
               { data: food.salt_combination }
             ] %>
@@ -45,20 +85,87 @@
 </div>
 
 <% elsif @salt && @component_params.size == 1 && @rice %>
-<h2>塩分、ご飯類</h2>
-<div class="food">
-  <% @foods.each do |food| %>
-    <% if food.main.genre == 'rice' %>
-      <div class="food_flex">
-        <div class="main">
-          <%= food.main.name %>
+<div class="food_select_back" id='tab'>
+  <h2>塩分、麺類</h2>
+  <p class='normal_select' id='normalbtn' >組み合わせ表示</p>
+  <p class='ng_select' id='js-ngbtn' >NG組み合わせ表示</p>
+
+  <div class="food_select container" id='js-normalselect' style="display: block">
+    <% @foods.each do |food| %>
+      <% if food.main.genre == 'rice' && food.main.salt + food.sub.salt < 3 %>
+        <div class="food_combi_contain">
+          <div class="food_combi_flex">
+            <div class="food_combi_flex_inner">
+              <div class="food_combi_menu_text">
+                <div class="food_combi_title">組み合わせ</div>
+                <div class="food_combi_menu_inner">
+                  <div class="food_combi_main">
+                    メイン：<%= food.main.name %>
+                  </div>
+                  <div class="food_combi_compo">×</div>
+                  <div class="food_combi_sub">
+                    プラス一品：<%= food.sub.name %>
+                  </div>
+                </div>
+              </div>
+              <div class="food_combi_text">
+                <div class="food_combi_price">
+                  組み合わせ価格： 税込<%= food.prices %>円
+                </div>
+                <div class="food_combi_price">
+                  総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food_graph">
+            <% @chart = [
+              { data: food.salt_combination }
+            ] %>
+            <%= bar_chart @chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
+          </div>
         </div>
-        <div class="sub">
-          <%= food.sub.name %>
-        </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+  <div class="food_select container" id="js-ngselect" style="display: none">
+    <% @foods.each do |food| %>
+      <% if food.main.genre == 'rice' && food.main.salt + food.sub.salt > 3 %>
+        <div class="food_combi_contain">
+          <div class="food_combi_flex">
+            <div class="food_combi_flex_inner">
+              <div class="food_combi_menu_text">
+                <div class="food_combi_title_red">NG組み合わせ</div>
+                <div class="food_combi_menu_inner">
+                  <div class="food_combi_main">
+                    メイン：<%= food.main.name %>
+                  </div>
+                  <div class="food_combi_compo">×</div>
+                  <div class="food_combi_sub">
+                    プラス一品：<%= food.sub.name %>
+                  </div>
+                </div>
+              </div>
+              <div class="food_combi_text">
+                <div class="food_combi_price">
+                  組み合わせ価格： 税込<%= food.prices %>円
+                </div>
+                <div class="food_combi_price">
+                  総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="food_graph">
+            <% @chart = [
+              { data: food.salt_combination }
+            ] %>
+            <%= bar_chart @chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 <% elsif @salt && @component_params.size == 1 && @bread %>

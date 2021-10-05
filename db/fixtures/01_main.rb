@@ -43,5 +43,7 @@ Main.seed(:id,
 
   { id:20, name: '一膳ごはん銀鮭とかつおめし', calorie: 410, sugar: 64.3, lipid: 10.0, salt: 2.3, genre: 'rice'},
 
-  { id:21, name: '一番だしで炊いたしらすご飯', calorie: 292, sugar: 63.6, lipid: 0.8, salt: 2.7, genre: 'rice'}
+  { id:21, name: '一番だしで炊いたしらすご飯', calorie: 292, sugar: 63.6, lipid: 0.8, salt: 2.7, genre: 'rice'},
+
+  { id:22, name: 'チーズたっぷり海老グラタン', calorie: 405, sugar: 37.9, lipid: 20.0, salt: 2.6, genre: 'rice'}
 )
