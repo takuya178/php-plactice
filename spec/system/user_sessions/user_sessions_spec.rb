@@ -7,9 +7,9 @@ RSpec.describe 'ログイン・ログアウト' do
         it 'ログインできること' do
           visit '/login'
           fill_in 'メールアドレス', with: user.email
-          fill_in 'パスワード', with: '1234567'
+          fill_in 'パスワード', with: 'password'
           click_button 'ログイン'
-          expect(current_path).to eq '/'
+          expect(current_path).to eq select_food_combinations_path
           expect(page).to have_content('ログインしました'), 'フラッシュメッセージ「ログインしました」が表示されていません'
         end
       end

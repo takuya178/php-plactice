@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render 'search_form' %>
+  </div>
+  <div class="text-right">
+  <%= link_to "新規作成", new_admin_food_combination_path %>
+</div>
+</div>
+<div class="col-sm-12">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">id</th>
+        <th scope="col" class="text-center">main_id</th>
+        <th scope="col" class="text-center">sub_id</th>
+        <th scope="col" class="text-center">prices</th>
+        <th scope="col" class="text-center">stores</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @foods %>
+    </tbody>
+  </table>
+</div>

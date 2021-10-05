@@ -1,8 +1,8 @@
 module LoginModule
   def login(user)
     visit login_path
-    fill_in 'email', with: user.email
-    fill_in 'password', with: '1234567'
+    fill_in 'メールアドレス', with: user.email
+    fill_in 'パスワード', with: 'password'
     click_button 'ログイン'
   end
 end

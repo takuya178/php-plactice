@@ -8,33 +8,35 @@
       <% if food.main.genre == 'noodle' %>
         <div class="food_combi_contain">
           <div class="food_combi_flex">
-            <div class="food_combi_main">
-              <%= food.main.name %>
-            </div>
-            <div class="food_combi_compo">×</div>
-            <div class="food_combi_sub">
-              <%= food.sub.name %>
-            </div>
-            <div class="food_combi_text">
-              <div class="food_combi_price">
-                税込<%= food.prices %>
+            <div class="food_combi_flex_inner">
+              <div class="food_combi_menu_text">
+                <div class="food_combi_title">組み合わせ</div>
+                <div class="food_combi_menu_inner">
+                  <div class="food_combi_main">
+                    メイン：<%= food.main.name %>
+                  </div>
+                  <div class="food_combi_compo">×</div>
+                  <div class="food_combi_sub">
+                    プラス一品：<%= food.sub.name %>
+                  </div>
+                </div>
               </div>
-
+              <div class="food_combi_text">
+                <div class="food_combi_price">
+                  組み合わせ価格： 税込<%= food.prices %>円
+                </div>
+                <div class="food_combi_price">
+                  総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                </div>
+              </div>
             </div>
           </div>
           <div class="food_graph">
-            <%
-            graph = Main.where(id: food.main_id).pluck(:name, :sugar)
-            graphy = Sub.where(id: food.sub_id).pluck(:name, :sugar)
-            %>
-
             <%# subs = Sub.where(id: food.main_id).pluck(:name, :sugar) %>
-
             <% @chart = [
-              {data: graph},
-              {data: graphy}
+              { data: food.sugar_combination }
             ] %>
-            <%= bar_chart @chart, min: 0, max: 100 %>
+            <%= bar_chart @chart, colors: ["#185ADB", "#666"], min: 0, max: 100 %>
           </div>
         </div>
       <% end %>
