@@ -41,8 +41,8 @@
 
 
   
-  // ボタンを押して/resultページへ
-  for(let i = 3; i < 7; i++) {
+  // ボタンを押して/food_combinationsページへ ajax
+  for(let i = 3; i < 5; i++) {
     $link[i].addEventListener('click', () => {
       genreId.push($link[i].dataset.id)
 

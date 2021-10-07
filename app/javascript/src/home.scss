@@ -1,5 +1,10 @@
 $text-color: #3EA1D1;
 $login-color: #3EA1D1B3;
+$ng-btn: #FF0033;
+$sugar-color: #185ADB;
+$lipid-color: #FFE227;
+$salt-color: #86340A;
+
 
 .inner {
   margin: 30px auto;
@@ -58,8 +63,7 @@ a {
   position: relative;
 }
 .top-picture {
-  // background-image: image-url("main.jpg");
-  background-image: url(../../assets/images/main.jpg);
+  background-image: url(../../assets/images/cook_md.jpg);
   background-size: cover;
   height: 800px;
   padding-top: 54.67%;
@@ -141,11 +145,10 @@ a {
 
 
 //
-//login
+// login
 //
 .login-page {
-  background-image: url(../../assets/images/login.jpg);
-  background-size: cover;
+  background-color: #F0E5CF;
 }
 .contact {
   max-width: 800px;
@@ -185,6 +188,15 @@ a {
   @include btn($text-color)
 }
 
+
+//
+// user_session
+//
+.user_session {
+  background-color: #F0E5CF;
+}
+
+
 // 
 // レスポンシブ対応
 // 
@@ -216,7 +228,7 @@ a {
 // top
 // 
   .top-picture {
-    background-image: url(../../assets/images/main.jpg);
+    background-image: url(../../assets/images/cook_sp.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -227,7 +239,7 @@ a {
     position: absolute;
     left: 20%;
     top: 20%;
-    transform: translate(-7%);
+    transform: translate(-15%);
     color: white;
     text-align: center;
 
@@ -259,7 +271,7 @@ a {
 }
 .top-bottom-login-box {
   margin-top: 20px;
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
 }
 .top-bottom-guest {

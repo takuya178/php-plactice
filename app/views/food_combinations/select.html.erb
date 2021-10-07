@@ -10,8 +10,8 @@
         <div class="row">
           <%= link_to "#", class: "button", data: {id: Tag.find_by(component: "sugar").id}, "data-turbolinks": false do %>
             <div class="example">
-              <%= image_tag("sugar.jpg", class: "w-100 select-img") %>
-              <h2 class="text-select" style="display: block;">糖質</h2>
+              <%= image_tag("sugar-pasta.jpg", class: "w-100 select-img") %>
+              <h2 class="text-select-sugar text-select" style="display: block;">糖質</h2>
               <h1 class="text-check" style="display: none;"></h1>
             </div>   
           <% end %>
@@ -22,9 +22,9 @@
           <%= link_to "#", class: "button", data: {id: Tag.find_by(component: "lipid").id}, "data-turbolinks": false do %>
             <div class="example">
               <%= image_tag("lipid.jpg", class: "w-100 select-img") %>
-              <h2 class="text-select" style="display: block;">脂質</h2>
+              <h2 class="text-select-lipid text-select" style="display: block;">脂質</h2>
               <h1 class="text-check" style="display: none;"></h1>
-            </div>   
+            </div>
           <% end %>
         </div>
       </div>
@@ -33,7 +33,7 @@
           <%= link_to "#", class: "button", data: {id: Tag.find_by(component: "salt").id}, "data-turbolinks": false do %>
             <div class="example">
               <%= image_tag("salt.jpg", class: "w-100 selec-img") %>
-              <h2 class="text-select" style="display: block;">塩分</h2>
+              <h2 class="text-select-salt text-select" style="display: block;">塩分</h2>
               <h1 class="text-check" style="display: none;"></h1>
             </div>   
           <% end %>
@@ -53,7 +53,7 @@
           <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "noodle").id}, "data-turbolinks": false do %>
             <div class="example">
               <%= image_tag("noodle.jpg", class: "w-100 select-img") %>
-              <h2 class="text-select" id="js-sugar-text" style="display: block;">麺類</h2>
+              <h2 class="text-select-noodle" id="js-sugar-text" style="display: block;">麺類</h2>
               <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
             </div>
           <% end %>
@@ -63,42 +63,18 @@
         <div class="row">
           <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "rice").id}, "data-turbolinks": false do %>
             <div class="example">
-              <%= image_tag("bento.jpg", class: "w-100 select-img") %>
-              <h2 class="text-select" id="js-sugar-text" style="display: block;">ご飯類</h2>
+              <%= image_tag("rice.jpg", class: "w-100 select-img") %>
+              <h2 class="text-select-rice" id="js-sugar-text" style="display: block;">ご飯類</h2>
               <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
             </div>
           <% end %>
         </div>
       </div>
-      <div class="card select-card">
-        <div class="row">
-          <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "bread").id}, "data-turbolinks": false do %>
-            <div class="example">
-              <%= image_tag("bread.jpg", class: "w-100 select-img") %>
-              <h2 class="text-select" id="js-sugar-text" style="display: block;">パン類</h2>
-              <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="card select-card">
-        <div class="row">
-          <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "snack").id}, "data-turbolinks": false do %>
-            <div class="example">
-              <%= image_tag("candy.jpg", class: "w-100 select-img") %>
-              <h2 class="text-select" id="js-sugar-text" style="display: block;">お菓子類</h2>
-              <h1 class="text-check" id="js-sugar-check" style="display: none;"></h1>
-            </div>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>
 </div>
 </div>
-
-
-
 
 
 <%= javascript_pack_tag 'home/select' %>

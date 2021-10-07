@@ -1,84 +1,82 @@
-<% if @sugar.nil? %>
-
-<% elsif @sugar && @component_params.size == 1 && @noodle %>
-<div class="food_select_back">
-  <h2>糖質、麺類</h2>
-  <div class="food_select container">
+<div class="food_select_back" id='tab'>
+  <div class="food_combi_btn">
+    <p class='food_combi_normal_select' id='js-normalbtn' >組み合わせ</p>
+    <p class='food_combi_ng_select' id='js-ngbtn' >NG組み合わせ</p>
+  </div>
+  <div class="food_select container" id='js-normalselect' style="display: block">
     <% @foods.each do |food| %>
-      <% if food.main.genre == 'noodle' %>
+      <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar < 75 && food.main.lipid + food.sub.lipid < 25 %>
         <div class="food_combi_contain">
           <div class="food_combi_flex">
-            <div class="food_combi_main">
-              <%= food.main.name %>
-            </div>
-            <div class="food_combi_compo">×</div>
-            <div class="food_combi_sub">
-              <%= food.sub.name %>
-            </div>
-            <div class="food_combi_text">
-              <div class="food_combi_price">
-                税込<%= food.prices %>
+              <div class="food_combi_menu_text">
+                <div class="food_combi_title">組み合わせ</div>
+                <div class="food_combi_menu_inner">
+                  <div class="food_combi_main">
+                    メイン：<%= food.main.name %>
+                  </div>
+                  <div class="food_combi_compo">×</div>
+                  <div class="food_combi_sub">
+                    プラス一品：<%= food.sub.name %>
+                  </div>
+                </div>
+                <div class="food_combi_border_blue"></div>
+                <div class="food_combi_text">
+                  <div class="food_combi_price">
+                    組み合わせ価格： 税込<%= food.prices %>円
+                  </div>
+                  <div class="food_combi_price">
+                    総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
           <div class="food_graph">
-    
-            <%  subs = Sub.where(id: food.main_id).pluck(:name, :sugar) %>
             <% @chart = [
-              {data: food.get_sugar},
-              {data: subs}
+              { data: food.sugar_plus_lipid }
+              { data: food.lipid_plus_sugar }
             ] %>
-            <%= bar_chart @chart, min: 0, max: 100 %>
+            <%= bar_chart @chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="food_select container" id="js-ngselect" style="display: none">
+    <% @foods.each do |food| %>
+      <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar > 75 && food.main.lipid + food.sub.lipid > 25 %>
+        <div class="food_combi_contain">
+          <div class="food_combi_flex">
+              <div class="food_combi_menu_text">
+                <div class="food_combi_title_red">NG組み合わせ</div>
+                <div class="food_combi_menu_inner">
+                  <div class="food_combi_main">
+                    メイン：<%= food.main.name %>
+                  </div>
+                  <div class="food_combi_compo">×</div>
+                  <div class="food_combi_sub">
+                    プラス一品：<%= food.sub.name %>
+                  </div>
+                </div>
+                <div class="food_combi_border_red"></div>
+                <div class="food_combi_text">
+                  <div class="food_combi_price">
+                    組み合わせ価格： 税込<%= food.prices %>円
+                  </div>
+                  <div class="food_combi_price">
+                    総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="food_graph">
+            <% @chart = [
+               { data: food.sugar_plus_lipid }
+               { data: food.lipid_plus_sugar }
+            ] %>
+            <%= bar_chart @chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
-
-<% elsif @sugar && @component_params.size == 1 && @rice %>
-<h2>糖質、ご飯類</h2>
-<div class="food_select">
-  <% @foods.each do |food| %>
-    <% if food.main.genre == 'rice' %>
-      <div class="food_flex">
-        <div class="food_select_main">
-          <%= food.main.name %>
-        </div>
-        <div class="food_select_sub">
-          <%= food.sub.name %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-<% elsif @sugar && @component_params.size == 1 && @bread %>
-<h2>糖質、パン類</h2>
-<% elsif @sugar && @component_params.size == 1 && @snack %>
-<h2>糖質、お菓子類</h2>
-<% end %>
-
-
-
-
-
-
-
-
-
-            <%# subs = Sub.where(id: food.main_id).pluck(:name, :sugar) %>
-
-
-
-
-
-
-
-  def get_combination_sugar
-    { "組み合わせの糖質": main.sugar + sub.sugar }
-  end
-
-  def get_combination_lipid
-    { "組み合わせの脂質": main.lipid + sub.lipid }
-  end
