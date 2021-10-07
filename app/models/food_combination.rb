@@ -4,15 +4,16 @@ class FoodCombination < ApplicationRecord
 
   enum stores: { seven: 0, lawson: 1 }
 
-  def sugar_combination
-    { 'sugar': main.sugar + sub.sugar }
+  def get_sugar
+    { 'value': main.sugar + sub.sugar }
   end
 
-  def lipid_combination
-    { 'sugar': main.lipid + sub.lipid }
+  def get_lipid
+    { 'value': main.lipid + sub.lipid }
   end
 
-  def salt_combination
-    { "組み合わせの塩分": main.salt + sub.salt }
+  def get_salt
+    { "value": main.salt + sub.salt }
   end
+
 end

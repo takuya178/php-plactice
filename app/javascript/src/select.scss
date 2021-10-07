@@ -1,3 +1,7 @@
+$sugar-color: #185ADB;
+$lipid-color: #FFE227;
+$salt-color: #86340A;
+
 .food-select-top {
   background-color: #F0E5CF;
 }
@@ -32,6 +36,11 @@
     background: rgba(0,0,0,0.5);
   }
 }
+.card {
+  margin: 0 auto;
+  max-width: 700px;
+  max-height: 600px;
+}
 .example {
   position: relative;
 
@@ -53,7 +62,7 @@
   }
 
 }
-.text-select {
+@mixin select-text-md($color) {
   position: absolute;
   font-size: 100px;
   top: 50%;
@@ -64,7 +73,24 @@
   margin:0;
   padding:0;
   font-weight: bold;
-  color: rgb(26, 24, 24);
+  color: $color;
+}
+
+.text-select-sugar {
+  @include select-text-md($sugar-color)
+}
+.text-select-lipid {
+  @include select-text-md($lipid-color)
+}
+.text-select-salt {
+  @include select-text-md($salt-color)
+}
+.text-select-noodle {
+  @include select-text-md(#fff)
+
+}
+.text-select-rice {
+  @include select-text-md(#fff)
 }
 
 .filter {
@@ -83,45 +109,13 @@
   display: none;
 }
 
-.select-img {
-  max-width: 1300px;
-  max-height: 700px;
-}
+// .select-img {
+//   max-width: 800px;
+//   max-height: 500px;
+// }
 
 
-// 
-// food画面
-// 
-@mixin food_combi_title_box($color) {
-  font-size: 1.2em;
-  background: $color;
-  padding: 4px;
-  text-align: center;
-  color: #FFF;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-}
 
-.food_combi_contain {
-  display: flex;
-  margin-bottom: 100px;
-  align-items: center;
-}
-.food_combi_flex {
-  margin-right: 50px;
-  width: 300px;
-  text-align: center;
-}
-.food_combi_menu_text {
-  background: #f1f1f1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-}
-.food_combi_title {
-  @include food_combi_title_box(#5fc2f5)
-}
-.food_combi_title_red {
-  @include food_combi_title_box(red)
-}
 
 // 
 // food_select画面
@@ -153,10 +147,6 @@
   }
 }
 
-.food_combi_price {
-  margin: 20px 0;
-}
-
 
 // .food_select_compo {
 //   text-align: center;
@@ -167,6 +157,12 @@
 // 
 // メディアクエリ
 @media (max-width: 480px) {
+
+  @mixin select-text-sp($color) {
+    font-size: 35px;
+    font-weight: bold;
+    color: $color;
+  }
 
   // selectページ
   .food-select-message {
@@ -183,11 +179,24 @@
       color: #86340A;
     }
   }
-
   .text-select {
-    font-size: 40px;
-    font-weight: bold;
-    color: rgb(26, 24, 24);
+    @include select-text-sp(#111111)
+  }
+  .text-select-sugar {
+    @include select-text-sp($sugar-color)
+  }
+  .text-select-lipid {
+    @include select-text-sp($lipid-color)
+  }
+  .text-select-salt {
+    @include select-text-sp($salt-color)
+  }
+  .text-select-noodle {
+    @include select-text-sp(#fff)
+
+  }
+  .text-select-rice {
+    @include select-text-sp(#fff)
   }
 
   .example {
@@ -211,25 +220,9 @@
   }
 
   .genre-button {
-    padding: 18px 58px;
+    padding: 15px 30px;
     margin: 40px auto;
     display: block;
     font-size: 16px;
-}
-
-
-
-// 
-// food_select画面
-// 
-  .food_combi_contain {
-    display: block;
-  }
-  .food_combi_flex {
-    width: 100%;
-  }
-  .food_combi_menu_inner {
-    padding: 10px 10px;
   }
 }
-

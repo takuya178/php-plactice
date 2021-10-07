@@ -1,0 +1,85 @@
+// 
+// food画面
+// 
+@mixin food_combi_title_box($color) {
+  font-size: 1.2em;
+  background: $color;
+  padding: 4px;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+.food_combi_contain {
+  display: flex;
+  margin-bottom: 100px;
+  align-items: center;
+}
+.food_combi_flex {
+  margin-right: 50px;
+  width: 300px;
+  text-align: center;
+}
+.food_combi_menu_text {
+  background: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.food_combi_title {
+  @include food_combi_title_box($text-color)
+}
+.food_combi_title_red {
+  @include food_combi_title_box($ng-btn)
+}
+.food_combi_price {
+  margin: 20px 0;
+}
+.food_combi_btn {
+  display: flex;
+  justify-content: center;
+
+  .food_combi_normal_select {
+    @include btn($text-color);
+    display: block;
+    max-width: 125px;
+    margin: 20px auto;
+    padding: 10px 15px;
+  }
+  .food_combi_ng_select {
+    @include btn($ng-btn);
+    display: block;
+    max-width: 125px;
+    margin: 20px auto;
+    padding: 10px 10px;
+  }
+}
+
+// 
+// メディアクエリ
+@media (max-width: 480px) {
+
+  // 
+  // food_select画面
+  // 
+  .food_combi_contain {
+    display: block;
+  }
+  .food_combi_flex {
+    width: 100%;
+  }
+  .food_combi_menu_inner {
+    padding: 10px 10px;
+    font-size: 17px;
+    margin-bottom: 15px;
+  }
+  .food_combi_text {
+    text-align: left;
+    padding: 15px;
+  }
+  .food_combi_border_red {
+    border:dotted 2px $ng-btn;
+  }
+  .food_combi_border_blue {
+    border: dotted 2px $text-color
+  }
+}

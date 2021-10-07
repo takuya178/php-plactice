@@ -40,7 +40,9 @@ FoodCombination.seed(:id,
 { id:20, main_id: 21, sub_id: 17, prices: 587, stores: 'seven'},
 
 { id:21, main_id: 2, sub_id: 37, prices: 550, stores: 'seven'},
+
 { id:22, main_id: 3, sub_id: 34, prices: 610, stores: 'seven'},
+
 { id:23, main_id: 21, sub_id: 17, prices: 587, stores: 'seven'},
 
 { id:24, main_id: 10, sub_id: 35, prices: 456, stores: 'seven'},
@@ -56,5 +58,45 @@ FoodCombination.seed(:id,
 { id:29, main_id: 15, sub_id: 39, prices: 785, stores: 'seven'},
 
 { id:30, main_id: 14, sub_id: 40, prices: 664, stores: 'seven'},
+
+{ id:31, main_id: 14, sub_id: 40, prices: 664, stores: 'seven'},
+
+{ id:32, main_id: 16, sub_id: 54, prices: 556, stores: 'seven'},
+
+{ id:33, main_id: 9, sub_id: 52, prices: 483, stores: 'seven'},
+
+{ id:34, main_id: 8, sub_id: 52, prices: 498, stores: 'seven'},
+
+{ id:35, main_id: 16, sub_id: 54, prices: 556, stores: 'seven'},
+
+{ id:36, main_id: 23, sub_id: 45, prices: 456, stores: 'seven'},
+
+{ id:37, main_id: 23, sub_id: 47, prices: 328, stores: 'seven'},
+
+{ id:38, main_id: 23, sub_id: 47, prices: 328, stores: 'seven'},
+
+{ id:39, main_id: 24, sub_id: 55, prices: 283, stores: 'seven'},
+
+{ id:40, main_id: 25, sub_id: 17, prices: 394, stores: 'seven'},
+
+{ id:41, main_id: 26, sub_id: 48, prices: 589, stores: 'seven'},
+
+{ id:42, main_id: 26, sub_id: 48, prices: 589, stores: 'seven'},
+
+{ id:43, main_id: 18, sub_id: 39, prices: 750, stores: 'seven'},
+
+{ id:44, main_id: 18, sub_id: 39, prices: 750, stores: 'seven'},
+
+{ id:45, main_id: 20, sub_id: 11, prices: 483, stores: 'seven'},
+
+{ id:46, main_id: 26, sub_id: 49, prices: 298, stores: 'seven'},
+
+{ id:47, main_id: 20, sub_id: 11, prices: 483, stores: 'seven'},
+
+{ id:48, main_id: 22, sub_id: 7, prices: 696, stores: 'seven'},
+
+{ id:49, main_id: 21, sub_id: 56, prices: 449, stores: 'seven'},
+
+{ id:50, main_id: 7, sub_id: 20, prices: 612, stores: 'seven'},
 
 )

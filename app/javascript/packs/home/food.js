@@ -1,7 +1,7 @@
 const tab = document.getElementById('tab')
 const normal = document.getElementById('js-normalselect');
 const abnormal = document.getElementById('js-ngselect');
-const normalbtn = document.getElementById('normalbtn');
+const normalbtn = document.getElementById('js-normalbtn');
 const ngbtn = document.getElementById('js-ngbtn');
 
 console.log(normalbtn)
