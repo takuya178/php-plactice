@@ -42,4 +42,10 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+  enums:
+    food_combination:
+      stores:
+        seven: 'セブン-イレブン'
+        lawson: 'LAWSON'
+
   

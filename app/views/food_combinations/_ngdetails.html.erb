@@ -1,0 +1,25 @@
+            <div class="food_combi_flex">
+              <div class="food_combi_flex_inner">
+                <div class="food_combi_menu_text">
+                  <div class="food_combi_title_red">NG組み合わせ</div>
+                  <div class="food_combi_menu_inner">
+                    <div class="food_combi_main">
+                      メイン：<%= food.main.name %>
+                    </div>
+                    <div class="food_combi_compo">×</div>
+                    <div class="food_combi_sub">
+                      プラス一品：<%= food.sub.name %>
+                    </div>
+                  </div>
+                  <div class="food_combi_border_red"></div>
+                  <div class="food_combi_text">
+                    <div class="food_combi_price">
+                      組み合わせ価格： 税込<%= food.prices %>円
+                    </div>
+                    <div class="food_combi_price">
+                      総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
