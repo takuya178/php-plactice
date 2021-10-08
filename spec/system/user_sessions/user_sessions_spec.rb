@@ -23,5 +23,17 @@ RSpec.describe 'ログイン・ログアウト' do
           expect(page).to have_content('ログインに失敗しました'), 'フラッシュメッセージ「ログインに失敗しました」が表示されていません'
         end
       end
+
+      describe 'ゲストログイン機能' do
+        let(:guest) { create(:user, :guest) }
+
+        it '正常にログインできること' do
+          guest
+          visit root_path
+          click_on 'ゲストログイン'
+          expect(page).to have_content('ゲストとしてログインしました')
+          expect(current_path).to eq select_food_combinations_path
+        end
+      end
     end
 end

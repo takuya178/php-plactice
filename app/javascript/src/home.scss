@@ -63,7 +63,7 @@ a {
   position: relative;
 }
 .top-picture {
-  background-image: url(../../assets/images/cook_md.jpg);
+  background-image: url("../images/cook_md.jpg");
   background-size: cover;
   height: 800px;
   padding-top: 54.67%;
@@ -228,7 +228,7 @@ a {
 // top
 // 
   .top-picture {
-    background-image: url(../../assets/images/cook_sp.jpg);
+    background-image: url("../images/cook_sp.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
