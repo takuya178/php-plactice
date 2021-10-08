@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("chartkick").use(require("highcharts"))
+const images = require.context('../images/', true)
 
 // yarnでインストールしたもの
 import 'bootstrap'
