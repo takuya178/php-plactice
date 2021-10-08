@@ -1,41 +1,14 @@
 <% if @salt && @component_params.size == 1 && @noodle %>
   <div class="food_select_back" id='tab'>
-    <div class="food_combi_btn">
-      <p class='food_combi_normal_select' id='js-normalbtn' >組み合わせ</p>
-      <p class='food_combi_ng_select' id='js-ngbtn' >NG組み合わせ</p>
-    </div>
+    <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
       <% @foods.each do |food| %>
         <% if food.main.genre == 'noodle' && food.main.salt + food.sub.salt < 3.1 %>
           <div class="food_combi_contain">
-            <div class="food_combi_flex">
-              <div class="food_combi_flex_inner">
-                <div class="food_combi_menu_text">
-                  <div class="food_combi_title">組み合わせ</div>
-                  <div class="food_combi_menu_inner">
-                    <div class="food_combi_main">
-                      メイン：<%= food.main.name %>
-                    </div>
-                    <div class="food_combi_compo">×</div>
-                    <div class="food_combi_sub">
-                      プラス一品：<%= food.sub.name %>
-                    </div>
-                  </div>
-                  <div class="food_combi_border_blue"></div>
-                  <div class="food_combi_text">
-                    <div class="food_combi_price">
-                      組み合わせ価格： 税込<%= food.prices %>円
-                    </div>
-                    <div class="food_combi_price">
-                      総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '塩分', data: food.get_salt }
+                { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
             </div>
@@ -47,34 +20,10 @@
       <% @foods.each do |food| %>
         <% if food.main.genre == 'noodle' && food.main.salt + food.sub.salt > 3.1 %>
           <div class="food_combi_contain">
-            <div class="food_combi_flex">
-              <div class="food_combi_flex_inner">
-                <div class="food_combi_menu_text">
-                  <div class="food_combi_title_red">NG組み合わせ</div>
-                  <div class="food_combi_menu_inner">
-                    <div class="food_combi_main">
-                      メイン：<%= food.main.name %>
-                    </div>
-                    <div class="food_combi_compo">×</div>
-                    <div class="food_combi_sub">
-                      プラス一品：<%= food.sub.name %>
-                    </div>
-                  </div>
-                  <div class="food_combi_border_red"></div>
-                  <div class="food_combi_text">
-                    <div class="food_combi_price">
-                      組み合わせ価格： 税込<%= food.prices %>円
-                    </div>
-                    <div class="food_combi_price">
-                      総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '塩分', data: food.get_salt }
+                { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
             </div>
@@ -86,42 +35,15 @@
 
 <% elsif @salt && @component_params.size == 1 && @rice %>
   <div class="food_select_back" id='tab'>
-    <div class="food_combi_btn">
-      <p class='food_combi_normal_select' id='js-normalbtn' >組み合わせ</p>
-      <p class='food_combi_ng_select' id='js-ngbtn' >NG組み合わせ</p>
-    </div>
+    <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
       <% @foods.each do |food| %>
         <% if food.main.genre == 'rice' && food.main.salt + food.sub.salt < 3.1 %>
           <div class="food_combi_contain">
-            <div class="food_combi_flex">
-              <div class="food_combi_flex_inner">
-                <div class="food_combi_menu_text">
-                  <div class="food_combi_title">組み合わせ</div>
-                  <div class="food_combi_menu_inner">
-                    <div class="food_combi_main">
-                      メイン：<%= food.main.name %>
-                    </div>
-                    <div class="food_combi_compo">×</div>
-                    <div class="food_combi_sub">
-                      プラス一品：<%= food.sub.name %>
-                    </div>
-                  </div>
-                  <div class="food_combi_border_blue"></div>
-                  <div class="food_combi_text">
-                    <div class="food_combi_price">
-                      組み合わせ価格： 税込<%= food.prices %>円
-                    </div>
-                    <div class="food_combi_price">
-                      総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '塩分', data: food.get_salt }
+                { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
             </div>
@@ -133,34 +55,10 @@
       <% @foods.each do |food| %>
         <% if food.main.genre == 'rice' && food.main.salt + food.sub.salt > 3.1 %>
           <div class="food_combi_contain">
-            <div class="food_combi_flex">
-              <div class="food_combi_flex_inner">
-                <div class="food_combi_menu_text">
-                  <div class="food_combi_title_red">NG組み合わせ</div>
-                  <div class="food_combi_menu_inner">
-                    <div class="food_combi_main">
-                      メイン：<%= food.main.name %>
-                    </div>
-                    <div class="food_combi_compo">×</div>
-                    <div class="food_combi_sub">
-                      プラス一品：<%= food.sub.name %>
-                    </div>
-                  </div>
-                  <div class="food_combi_border_red"></div>
-                  <div class="food_combi_text">
-                    <div class="food_combi_price">
-                      組み合わせ価格： 税込<%= food.prices %>円
-                    </div>
-                    <div class="food_combi_price">
-                      総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '塩分', data: food.get_salt }
+                { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
             </div>
