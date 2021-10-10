@@ -1,7 +1,7 @@
             <div class="food_combi_flex">
               <div class="food_combi_flex_inner">
                 <div class="food_combi_menu_text">
-                  <div class="food_combi_title_red">NG組み合わせ</div>
+                  <div class="food_combi_title_red">成分量が多い組み合わせ</div>
                   <div class="food_combi_menu_inner">
                     <div class="food_combi_main">
                       メイン：<%= food.main.name %>
@@ -17,7 +17,10 @@
                       組み合わせ価格： 税込<%= food.prices %>円
                     </div>
                     <div class="food_combi_price">
-                      総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                      組み合わせ総カロリー： <%= food.main.calorie + food.sub.calorie %> cal
+                    </div>
+                    <div class="food_combi_price">
+                      コンビニ名： <%= food.stores_i18n %>
                     </div>
                   </div>
                 </div>

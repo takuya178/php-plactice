@@ -1,6 +1,6 @@
 $text-color: #3EA1D1;
 $login-color: #3EA1D1B3;
-$ng-btn: #FF0033;
+$ng-btn: #FF9900;
 $sugar-color: #185ADB;
 $lipid-color: #FFE227;
 $salt-color: #86340A;
@@ -8,9 +8,6 @@ $salt-color: #86340A;
 
 .inner {
   margin: 30px auto;
-}
-li {
-  list-style: none;
 }
 a {
   text-decoration: none;
@@ -128,8 +125,16 @@ a {
 }
 .concept-text-main {
   margin-bottom: 30px;
+  h2 {
+    font-size: 40px;
+  }
 }
-.consept {
+.concept-text-sub {
+  p {
+    font-size: 20px;
+  }
+}
+.concept {
   background-color: none;
 }
 .concept-card::before {
