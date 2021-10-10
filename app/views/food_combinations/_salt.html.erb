@@ -67,7 +67,7 @@
       <% @foods.each do |food| %>
         <% if food.main.genre == 'rice' && food.main.salt + food.sub.salt >= 3.1 %>
           <div class="food_combi_contain">
-            <%= render 'details', food: food %>
+            <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
                 { name: '塩分(g)', data: food.get_salt }
