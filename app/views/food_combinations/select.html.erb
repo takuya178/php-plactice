@@ -11,7 +11,7 @@
           <%= link_to "#", class: "button", data: {id: Tag.find_by(component: "sugar").id}, "data-turbolinks": false do %>
             <div class="example">
               <%= image_pack_tag("media/images/sugar-pasta.jpg", class: "w-100 select-img") %>
-              <h2 class="text-select-sugar text-select" style="display: block;">糖質</h2>
+              <h2 class="text-select-sugar text-select" style="display: block;">炭水化物</h2>
               <h1 class="text-check" style="display: none;"></h1>
             </div>   
           <% end %>
@@ -47,6 +47,7 @@
     <div class="genre" id="js-genre">
       <div class="food-select-message">
         <p class='food-message-top'>食べたいジャンルを選択してください</p>
+        <p class='food-message-sub'>※一つだけ選択してください。</p>
       </div>
       <div class="card select-card">
         <div class="row">

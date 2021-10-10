@@ -4,11 +4,10 @@ Rails.application.routes.draw do
   get 'login',  to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
-  # ゲストログイン
   post 'guest_login', to: 'user_sessions#guest_login'
   get 'privacy', to: 'static_pages#privacy'
   get 'terms', to: 'static_pages#terms'
-  # get 'select', to: 'selects#index'
+  get 'explanation', to: 'static_pages#explanation'
 
 
   resources :users, only: %i[new create show]

@@ -44,6 +44,7 @@
     max-width: 125px;
     margin: 20px auto;
     padding: 10px 15px;
+    line-height: 3;
   }
   .food_combi_ng_select {
     @include btn($ng-btn);
@@ -52,6 +53,21 @@
     margin: 20px auto;
     padding: 10px 10px;
   }
+}
+.food_combi_border_red {
+  border:dotted 2px $ng-btn;
+}
+.food_combi_border_blue {
+  border: dotted 2px $text-color
+}
+.food_combi_component_text_inner {
+  margin-bottom: 30px;
+}
+.food_combi_ngtext {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 // 
@@ -81,5 +97,14 @@
   }
   .food_combi_border_blue {
     border: dotted 2px $text-color
+  }
+  .food_combi_component_text_inner {
+    margin-bottom: 30px;
+  }
+  .food_combi_ngtext {
+    text-align: center;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 10px;
   }
 }

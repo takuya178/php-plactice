@@ -1,5 +1,5 @@
 $sugar-color: #185ADB;
-$lipid-color: #FFE227;
+$lipid-color: #ffeb6a;
 $salt-color: #86340A;
 
 .food-select-top {
@@ -64,7 +64,7 @@ $salt-color: #86340A;
 }
 @mixin select-text-md($color) {
   position: absolute;
-  font-size: 100px;
+  font-size: 85px;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
@@ -159,7 +159,7 @@ $salt-color: #86340A;
 @media (max-width: 480px) {
 
   @mixin select-text-sp($color) {
-    font-size: 35px;
+    font-size: 28px;
     font-weight: bold;
     color: $color;
   }
@@ -175,7 +175,7 @@ $salt-color: #86340A;
     .food-message-sub {
       margin-top: 0;
       margin-bottom: 1rem;
-      font-size: 13px;
+      font-size: 17px;
       color: #86340A;
     }
   }

@@ -2,8 +2,11 @@
   <div class="food_select_back" id='tab'>
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質25g以下の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid < 25 %>
+        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid <= 25 %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
@@ -17,10 +20,13 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid > 25 %>
+        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid >= 26 %>
           <div class="food_combi_contain">
-            <%= render 'details', food: food %>
+            <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
                 { name: '脂質(g)', data: food.get_lipid }
@@ -37,8 +43,11 @@
   <div class="food_select_back" id='tab'>
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質25g以下の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid < 25 %>
+        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid <= 25 %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
@@ -52,10 +61,13 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid > 25 %>
+        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid >= 26 %>
           <div class="food_combi_contain">
-            <%= render 'details', food: food %>
+            <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
                 { name: '脂質(g)', data: food.get_lipid }

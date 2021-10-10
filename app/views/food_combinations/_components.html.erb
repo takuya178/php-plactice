@@ -2,13 +2,16 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">炭水化物80g以下、脂質25g以下の組み合わせ</p> 
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar < 75 && food.main.lipid + food.sub.lipid < 25  %>
+        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar <= 80 && food.main.lipid + food.sub.lipid <= 25  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
@@ -18,13 +21,18 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">炭水化物81g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar > 75 && food.main.lipid + food.sub.lipid > 25  %>
+        <% if food.main.genre == 'noodle' && (food.main.sugar + food.sub.sugar >= 81 || food.main.lipid + food.sub.lipid >= 26)  %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
@@ -39,13 +47,16 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">炭水化物80g以下、脂質25g以下の組み合わせ</p>
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar < 75 && food.main.lipid + food.sub.lipid < 25  %>
+        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar <= 80 && food.main.lipid + food.sub.lipid <= 25  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
@@ -55,13 +66,18 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">炭水化物81g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar > 75 && food.main.lipid + food.sub.lipid > 25  %>
+        <% if food.main.genre == 'rice' && (food.main.sugar + food.sub.sugar >= 81 || food.main.lipid + food.sub.lipid >= 26)  %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#FFE227"], min: 0, max: 100 %>
@@ -76,8 +92,11 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質25g以下、塩分3g以下の組み合わせ</p>
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid < 25 && food.main.salt + food.sub.salt < 3.1  %>
+        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid <= 25 || food.main.salt + food.sub.salt <= 3  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
@@ -92,8 +111,13 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid > 25 && food.main.salt + food.sub.salt > 3.1  %>
+        <% if food.main.genre == 'noodle' && (food.main.lipid + food.sub.lipid >= 26 || food.main.salt + food.sub.salt >= 3.1)  %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
             <div class="food_graph">
@@ -113,8 +137,11 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質25g以下、塩分3g以下の組み合わせ</p>
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid < 25 && food.main.salt + food.sub.salt < 3.1  %>
+        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid <= 25 || food.main.salt + food.sub.salt <= 3  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
@@ -129,8 +156,13 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid > 25 && food.main.salt + food.sub.salt > 3.1  %>
+        <% if food.main.genre == 'rice' && (food.main.lipid + food.sub.lipid >= 26 || food.main.salt + food.sub.salt >= 3.1)  %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
             <div class="food_graph">
@@ -150,13 +182,16 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質80g以下、塩分3g以下の組み合わせ</p>
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar < 75 && food.main.salt + food.sub.salt < 3.1  %>
+        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar <= 80 && food.main.salt + food.sub.salt <= 3  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#b00"], min: 0, max: 100 %>
@@ -166,13 +201,18 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質81g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar > 25 && food.main.salt + food.sub.salt > 3.1  %>
+        <% if food.main.genre == 'noodle' && (food.main.sugar + food.sub.sugar >= 81 || food.main.salt + food.sub.salt >= 3.1)  %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#b00"], min: 0, max: 100 %>
@@ -187,13 +227,16 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質80g以下、塩分3g以下の組み合わせ</p>
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar < 75 && food.main.salt + food.sub.salt < 3.1  %>
+        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar <= 80 && food.main.salt + food.sub.salt <= 3  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#b00"], min: 0, max: 100 %>
@@ -203,13 +246,18 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質81g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar > 25 && food.main.salt + food.sub.salt > 3.1  %>
+        <% if food.main.genre == 'rice' && (food.main.sugar + food.sub.sugar >= 81 || food.main.salt + food.sub.salt >= 3.1)  %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
               <%= bar_chart chart, colors: ["#185ADB", "#b00"], min: 0, max: 100 %>
@@ -227,13 +275,16 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質80g以下、脂質25g以下、塩分3g以下の組み合わせ</p> 
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar < 75 && food.main.lipid + food.sub.lipid < 25 && food.main.salt + food.sub.salt < 3.1 %>
+        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar < 80 && food.main.lipid + food.sub.lipid < 25 && food.main.salt + food.sub.salt < 3 %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
@@ -244,13 +295,20 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質81g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>    
+        <p class="food_combi_ngtext">or</p>    
+        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar > 75 && food.main.lipid + food.sub.lipid > 25 && food.main.salt + food.sub.salt > 3.1 %>
+        <% if food.main.genre == 'noodle' && (food.main.sugar + food.sub.sugar >= 81 || food.main.lipid + food.sub.lipid >= 25 || food.main.salt + food.sub.salt >= 3) %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
@@ -266,13 +324,16 @@
   <div class="food_select_back">
     <%= render 'button' %>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質80g以下、脂質25g以下、塩分3g以下の組み合わせ</p>  
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar < 75 && food.main.lipid + food.sub.lipid < 25 && food.main.salt + food.sub.salt < 3.1 %>
+        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar <= 80 && food.main.lipid + food.sub.lipid <= 25 && food.main.salt + food.sub.salt <= 3 %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
@@ -283,13 +344,21 @@
       <% end %>
     </div>
     <div class="food_select container" id="js-ngselect" style="display: none">
+      <div class="food_combi_component_text_inner">
+        <p class="food_combi_ngtext">糖質81g以上の組み合わせ</p>
+        <p class="food_combi_ngtext">or</p>
+        <p class="food_combi_ngtext">脂質26g以上の組み合わせ</p>    
+        <p class="food_combi_ngtext">or</p>    
+        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
+      </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.sugar + food.sub.sugar > 75 && food.main.lipid + food.sub.lipid > 25 && food.main.salt + food.sub.salt > 3.1 %>
+        <% if food.main.genre == 'rice' && (food.main.sugar + food.sub.sugar >= 81 || food.main.lipid + food.sub.lipid >= 26 || food.main.salt + food.sub.salt >= 3.1) %>
           <div class="food_combi_contain">
             <%= render 'ngdetails', food: food %>
+
             <div class="food_graph">
               <% chart = [
-                { name: '糖質(g)', data: food.get_sugar },
+                { name: '炭水化物(g)', data: food.get_sugar },
                 { name: '脂質(g)', data: food.get_lipid },
                 { name: '塩分(g)', data: food.get_salt }
               ] %>
@@ -300,5 +369,4 @@
       <% end %>
     </div>
   </div>
-
 <% end %>

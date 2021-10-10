@@ -21,6 +21,44 @@
   }
 }
 
+
+// 
+// explanation
+// 
+.explanation_male {
+  font-size: 25px;
+}
+.explanation_lady {
+  font-size: 25px;
+}
+.explanation_inner {
+  font-size: 20px;
+  li {
+    margin-bottom: 50px;
+  }
+}
+.explanation_male_inner {
+  font-size: 25px;
+}
+.explanation_lady_inner {
+  font-size: 25px;
+}
+.top_container {
+  padding: 10px;
+  font-size: 20px;
+}
+.navbar {
+  padding: 30px;
+}
+.container-fluid {
+  font-size: 20px;
+}
+.explanation_nutrition {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 // 
 // メディアクエリ
 @media (max-width: 480px) {
@@ -29,5 +67,34 @@
   }
   .contact-item-input {
     margin-bottom: 45px;
+  }
+  .top_container {
+    padding: 10px;
+    font-size: 15px;
+  }
+  .navbar {
+    padding: 30px;
+  }
+  .container-fluid {
+    font-size: 15px;
+  }
+
+// 
+// explanation
+// 
+  .explanation_nutrition {
+    display: block;
+  }
+  .explanation_inner {
+    font-size: 20px;
+    li {
+      margin-bottom: 50px;
+    }
+  }
+  .explanation_male_inner {
+    font-size: 20px;
+  }
+  .explanation_lady_inner {
+    font-size: 20px;
   }
 }
