@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'terms', to: 'static_pages#terms'
   get 'explanation', to: 'static_pages#explanation'
 
-
+  resource :inquiry, only: %i[new create]
   resources :users, only: %i[new create show]
   resources :food_combinations, only: %i[new index] do
     collection do
