@@ -69,6 +69,11 @@
   font-size: 30px;
   margin-bottom: 10px;
 }
+.scroll {
+	overflow:auto;
+	width:400px;
+	height:300px;
+}
 
 // 
 // メディアクエリ
@@ -79,6 +84,9 @@
   // 
   .food_combi_contain {
     display: block;
+    &.is-active {
+      background-color: #f6dc51;
+  }
   }
   .food_combi_flex {
     width: 100%;
