@@ -4,7 +4,7 @@ $salt-color: #86340A;
 
 
 @mixin btn($color) {
-  display: inline-block;
+  display: block;
   padding: 1.2em 5em;
   text-decoration: none;
   background: $color;

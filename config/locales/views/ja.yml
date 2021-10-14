@@ -6,12 +6,20 @@ ja:
     show: '詳細'
     edit: '編集'
     delete: '削除'
+    search_word: '検索ワード'
     message:
       require_login: 'ログインしてください'
   static_pages:
     home:
       login: 'ログイン'
       guest_login: 'ゲストログイン'
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
   users:
     new:
       title: 'ユーザー登録'

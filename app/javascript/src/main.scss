@@ -1,0 +1,37 @@
+@mixin main_title_box($color) {
+  font-size: 1.2em;
+  background: $color;
+  padding: 4px;
+  text-align: center;
+  color: #FFF;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  width: 100%;
+}
+.mains {
+  background-color: #F0E5CF;
+}
+.main_title {
+  @include main_title_box(orange)
+}
+.food_combi_border_blue {
+  border: dotted 2px $text-color
+}
+.main_menu_inner {
+  width: 100%;
+  margin: 100px auto;
+}
+.main_text_box {
+  background-color: #fff;
+}
+.pagination {
+  justify-content: center;
+}
+.page-item.active .page-link {     
+  background: orange;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
+}
+.page-item .page-link {
+  border: none;
+  background-color: #F0E5CF;
+}
