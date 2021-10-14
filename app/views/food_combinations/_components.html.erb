@@ -96,7 +96,7 @@
         <p class="food_combi_ngtext">脂質25g以下、塩分3g以下の組み合わせ</p>
       </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid <= 25 || food.main.salt + food.sub.salt <= 3  %>
+        <% if food.main.genre == 'noodle' && food.main.lipid + food.sub.lipid <= 25 && food.main.salt + food.sub.salt <= 3  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">
@@ -141,7 +141,7 @@
         <p class="food_combi_ngtext">脂質25g以下、塩分3g以下の組み合わせ</p>
       </div>
       <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid <= 25 || food.main.salt + food.sub.salt <= 3  %>
+        <% if food.main.genre == 'rice' && food.main.lipid + food.sub.lipid <= 25 && food.main.salt + food.sub.salt <= 3  %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
             <div class="food_graph">

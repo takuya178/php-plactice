@@ -51,7 +51,7 @@
       </div>
       <div class="card select-card">
         <div class="row">
-          <%= link_to '#', class: "button", data: {id: Tag.find_by(genre: "noodle").id}, "data-turbolinks": false do %>
+          <%= link_to '#', class: "button", id: 'js-noodle',  data: {id: Tag.find_by(genre: "noodle").id}, "data-turbolinks": false do %>
             <div class="example">
               <%= image_pack_tag("media/images/noodle.jpg", class: "w-100 select-img") %>
               <h2 class="text-select-noodle" id="js-sugar-text" style="display: block;">麺類</h2>

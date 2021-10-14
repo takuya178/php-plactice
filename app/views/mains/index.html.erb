@@ -1,4 +1,30 @@
-<% @mains.each do |main| %>
-<%= main.name %>
-<% end %>
-<%= paginate @mains %>
+<div class="mains">
+  <div class="container">
+    <%= render 'search_form', url: mains_path %>
+    <%= paginate @mains %> 
+    <% @mains.each do |main, i| %>
+      <div class="main_menu_inner" id="js-main">
+        <div class="main_title">組み合わせ</div>
+        <div class="main_text_box">
+          <div class="main_menu">
+              メイン：<%= main.name %>
+          </div>
+          <div class="food_combi_border_blue"></div>
+          <div class="main_text">
+            カロリー： <%= main.calorie %> cal
+          </div>
+          <div class="main_text">
+            炭水化物： <%= main.sugar %>g
+          </div>
+          <div class="main_text">
+            脂質： <%= main.lipid %>g
+          </div>
+          <div class="main_text">
+            塩分： <%= main.salt %>g
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate @mains %> 
+  </div>
+</div>

@@ -5,6 +5,7 @@
   const normalbtn = document.getElementById('js-normalbtn');
   const ngbtn = document.getElementById('js-ngbtn');
   const contents = document.querySelectorAll('#js-contents');
+  const MAX_SCROLL_LENGTH = 3;
 
   
 // 「組み合わせ」ボタンと「成分量が多い組み合わせ」ボタン

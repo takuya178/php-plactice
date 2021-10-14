@@ -13,14 +13,22 @@ class FoodCombinationsController < ApplicationController
     @bread = Tag.find_by(id: genre_ids, genre: 'bread')
     @snack = Tag.find_by(id: genre_ids, genre: 'snack')
 
-    @foods = FoodCombination.eager_load(:main, :sub).all
+    @q = FoodCombination.ransack(params[:q])
+    @foods = @q.result(distinct: true).eager_load(:main, :sub).all
+    if params[:q].present?
+      @search = FoodCombination.ransack(params[:q])
+      @datespots = @search.result
+    else
+    # 検索フォーム以外からアクセスした時の処理（デフォルトの並び順）
+      params[:q] = { sorts: 'date asc' }
+      @search = FoodCombination.ransack(params[:q])
+      @datespots = @search.result
+    end
   end
 
   def select; end
 
   def check; end
-
-  def result; end
 
   def genre_select; end
 end
