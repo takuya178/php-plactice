@@ -5,5 +5,5 @@
   <td><%= food_combination.prices %></td>
   <td><%= food_combination.stores %></td>
   <td> <%= button_to t("defaults.show"),  admin_food_combination_path(food_combination), method: :get, class: "btn btn-success" %></td>
-  <td> <%= button_to t("defaults.delete"), edit_admin_food_combination_path(food_combination), method: :delete, class: "btn btn-danger" %></td>
+  <td> <%= button_to t("defaults.delete"), admin_food_combination_path(food_combination), method: :delete, class: "btn btn-danger" %></td>
 </tr>

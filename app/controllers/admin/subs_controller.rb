@@ -34,11 +34,14 @@ class Admin::SubsController < Admin::BaseController
     end
   end
 
-  def destroy; end
+  def destroy
+    @sub.destroy!
+    redirect_to admin_subs_path
+  end
 
   private
 
-  def main_params
+  def sub_params
     params.require(:sub).permit(:name, :image, :calorie, :sugar, :lipid, :salt)
   end
 

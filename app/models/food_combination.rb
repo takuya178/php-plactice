@@ -3,6 +3,7 @@ require 'bigdecimal'
 
   belongs_to :main
   belongs_to :sub
+  has_one_attached :image
 
   enum stores: { seven: 0, lawson: 1 }
 

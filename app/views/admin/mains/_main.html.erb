@@ -8,5 +8,5 @@
   <td><%= main.lipid %></td>
   <td><%= main.salt %></td>
   <td> <%= button_to t("defaults.show"),  admin_main_path(main), method: :get, class: "btn btn-success" %></td>
-  <td> <%= button_to t("defaults.delete"), edit_admin_main_path(main), method: :delete, class: "btn btn-danger" %></td>
+  <td> <%= button_to t("defaults.delete"), admin_main_path(main), method: :delete, class: "btn btn-danger" %></td>
 </tr>

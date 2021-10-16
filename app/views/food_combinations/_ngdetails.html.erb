@@ -2,6 +2,16 @@
               <div class="food_combi_flex_inner">
                 <div class="food_combi_menu_text">
                   <div class="food_combi_title_red">成分量が多い組み合わせ</div>
+                    <% if food.main.image.attached? %>
+                      <%= image_tag food.main.image, size: '200x200', class: 'card-img-top' %>
+                    <% else %>
+                      <%= image_pack_tag("media/images/noodle.jpg", class: "w-100 select-img") %>
+                    <% end %>
+                    <% if food.sub.image.attached? %>
+                      <%= image_tag food.sub.image, size: '200x200', class: 'card-img-top' %>
+                    <% else %>
+                      <%= image_pack_tag("media/images/noodle.jpg", class: "w-100 select-img") %>
+                    <% end %>
                   <div class="food_combi_menu_inner">
                     <div class="food_combi_main">
                       メイン：<%= food.main.name %>
