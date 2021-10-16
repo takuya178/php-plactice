@@ -42,6 +42,10 @@
           <%= f.password_field :password_confirmation, class: 'form-control' %>
           <%= render 'shared/error_messages', object: f.object, text: :password_confirmation %>
         </div>
+        <div class="contact-item-input">
+          <%= f.file_field :image, class: 'form-control' %>
+          <%= render 'shared/error_messages', object: f.object, text: :password_confirmation %>
+        </div>
         </div>
         <div class="contact-button">
           <%= f.submit t('defaults.register'), class: 'btn-square-shadow login' %>

@@ -34,7 +34,10 @@ class Admin::MainsController < Admin::BaseController
     end
   end
 
-  def destroy; end
+  def destroy
+    @main.destroy!
+    redirect_to admin_mains_path
+  end
 
   private
 

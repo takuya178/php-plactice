@@ -34,12 +34,15 @@ class Admin::FoodCombinationsController < Admin::BaseController
     end
   end
 
-  def destroy; end
+  def destroy
+    @food.destroy!
+    redirect_to admin_food_combinations_path
+  end
 
   private
 
   def food_combination_params
-    params.require(:food_combination).permit(:main_id, :sub_id, :prices, :stores)
+    params.require(:food_combination).permit(:main_id, :sub_id, :prices, :stores, :image)
   end
 
   def set_food_combination
