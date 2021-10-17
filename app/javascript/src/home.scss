@@ -58,6 +58,7 @@ a {
 // // 
 .top {
   position: relative;
+  width: 100%;
 }
 .top-picture {
   background-image: url("../images/cook_md.jpg");
@@ -67,10 +68,10 @@ a {
 }
 .top-message {
   position: absolute;
-  left: 34%;
-  top: 22%;
-  transform: translate(-7%);
-  color: white;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+  color: #fff;
   text-align: center;
   h1 {
     font-size: 80px;
@@ -245,10 +246,11 @@ a {
   }
   .top-message {
     position: absolute;
-    left: 20%;
-    top: 20%;
-    transform: translate(-15%);
-    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    color: #fff;
     text-align: center;
 
     p {

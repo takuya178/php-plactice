@@ -12,7 +12,7 @@ class InquiriesController < ApplicationController
       flash[:notice] = '送信しました。'
       redirect_to root_path
     else
-      flash[:alert] = "送信に失敗しました"
+      flash.now[:danger] = '送信に失敗しました'
       render :new
     end
   end

@@ -20,8 +20,8 @@ RSpec.describe '共通系', type: :system do
           visit food_combinations_path
           expect(page).to have_content('healthy_combi')
           expect(page).to have_content('組み合わせ選択')
-          expect(page).to have_content('メイン食品一覧')
-          expect(page).to have_content('サブ料理一覧')
+          expect(page).to have_content('メイン料理一覧')
+          # expect(page).to have_content('サブ料理一覧')
           expect(page).to have_content('ログアウト')
         end
       end

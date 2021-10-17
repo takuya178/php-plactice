@@ -36,12 +36,12 @@
        }
        if(count == 0) {
          button.disabled = true;
-         button.classList.remove('genre_select_btn')
-         button.classList.add('genre_select_btn_ng')
+         button.classList.remove('btn-primary')
+         button.classList.add('btn-secondary')
        } else {
          button.disabled = false;
-         button.classList.remove('genre_select_btn_ng')
-         button.classList.add('genre_select_btn')
+         button.classList.remove('btn-secondary')
+         button.classList.add('btn-primary')
        }
        $img[i].classList.toggle('filter');
        console.log(count)
