@@ -10,20 +10,50 @@
   font-weight: bold;
   letter-spacing: 0.05em;
 }
-
+.food_combi_flex img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
 .food_combi_contain {
   display: flex;
   margin-bottom: 100px;
   align-items: center;
+  justify-content: space-around;
 }
 .food_combi_flex {
-  margin-right: 50px;
-  width: 300px;
+  max-width: 850px;
+  width: 100%;
+}
+.food_combi_text {
+  font-size: 25px;
   text-align: center;
+  padding: 20px;
+}
+.food_combi_compo {
+  font-size: 40px;
+  margin: auto 40px
 }
 .food_combi_menu_text {
   background: #f1f1f1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.food_combi_main_name {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+.food_combi_sub_name {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+.food_combi_menu_inner {
+  display: flex;
+  text-align: center;
+  font-size: 25px;
+  padding: 20px;
+  justify-content: space-around;
 }
 .food_combi_title {
   @include food_combi_title_box($text-color)
@@ -70,32 +100,81 @@
   margin-bottom: 10px;
 }
 .scroll {
-	overflow:auto;
+  overflow:auto;
 	width:400px;
 	height:300px;
 }
 
+
+
 // 
 // メディアクエリ
-@media (max-width: 480px) {
+// 
+@media (max-width: 1025px) {
+  .food_combi_contain {
+    display: block;
+  }
 
+}
+
+// タブレット対応
+// 
+@media (max-width: 768px) {
+  .food_combi_contain {
+    display: block;
+  }
+  .food_combi_flex img {
+    width: 240px;
+    height: 200px;
+    object-fit: cover;
+  }
+  .food_combi_menu_inner {
+    display: flex;
+    font-size: 25px;
+    padding: 30px;
+    justify-content: space-around;
+  }
+  .food_combi_flex {
+    width: 100%;
+    text-align: center;
+    max-width: 880px;
+  }
+}
+
+
+@media (max-width: 480px) {
   // 
   // food_select画面
   // 
+  .food_combi_flex img {
+    width: 290px;
+    height: 200px;
+    object-fit: cover;
+  }
   .food_combi_contain {
     display: block;
+  }
+  .select-img {
+    width: 220px;
+    height: 200px;
   }
   .food_combi_flex {
     width: 100%;
   }
   .food_combi_menu_inner {
+    display: block;
     padding: 10px 10px;
     font-size: 17px;
     margin-bottom: 15px;
   }
   .food_combi_text {
     text-align: left;
+    font-size: 14px;
     padding: 15px;
+  }
+  .food_combi_compo {
+    font-size: 40px;
+    margin: 25px auto
   }
   .food_combi_border_red {
     border:dotted 2px $ng-btn;
@@ -113,3 +192,17 @@
     margin-bottom: 10px;
   }
 }
+  
+  
+  
+  /*299px以下で適用する内容*/
+  @media (max-width: 320px) {
+    .food_combi_flex img {
+      width: 220px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .food_combi_contain {
+      display: block;
+    }
+  }

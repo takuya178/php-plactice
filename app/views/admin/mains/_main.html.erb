@@ -1,6 +1,6 @@
 <tr>
   <td><%= main.id %></td>
-  <td><%= main.name %></td>
+  <td><%= link_to main.name, admin_main_path(main), method: :get %></td>
   <td><%= main.image %></td>
   <td><%= main.genre %></td>
   <td><%= main.calorie %></td>

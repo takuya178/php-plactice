@@ -206,8 +206,11 @@ a {
 // レスポンシブ対応
 // 
 @media (max-width: 480px){
+  .container {
+    padding: 20px;
+  }
   .inner {
-    margin: 30px auto;
+    margin: 15px auto;
   }
   
   .section-title {
