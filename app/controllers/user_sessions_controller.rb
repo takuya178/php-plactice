@@ -20,7 +20,7 @@ class UserSessionsController < ApplicationController
   end
 
   def guest_login
-    redirect_to root_path, alert: 'すでにログインしています' if current_user # ログインしてる場合はユーザーを作成しない
+    redirect_to root_path, alert: 'すでにログインしています' if current_user
 
     random_value = SecureRandom.hex
     user = User.create!(name: random_value, email: "test_#{random_value}@example.com", password: "#{random_value}", password_confirmation: "#{random_value}", role: :guest)

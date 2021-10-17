@@ -8,7 +8,7 @@
                       <% if food.main.image.attached? %>
                         <%= image_tag food.main.image %>
                       <% else %>
-                        <%= image_pack_tag("media/images/boxed.jpg") %>
+                        <%= image_pack_tag("media/images/noimage.jpg") %>
                       <% end %>
                       <div class="food_combi_main_name">
                       <%= food.main.name %>
@@ -20,7 +20,7 @@
                       <% if food.sub.image.attached? %>
                         <%= image_tag food.sub.image %>
                       <% else %>
-                        <%= image_pack_tag("media/images/boxed.jpg") %>
+                        <%= image_pack_tag("media/images/noimage.jpg") %>
                       <% end %>
                       <div class="food_combi_sub_name">
                       <%= food.sub.name %>
