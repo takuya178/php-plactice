@@ -41,6 +41,9 @@ $salt-color: #86340A;
 
 .select-card {
   position: relative;
+  margin: 0 auto;
+  max-width: 700px;
+  max-height: 600px;
 
   &::before {
     content: '';
@@ -53,11 +56,7 @@ $salt-color: #86340A;
     background: rgba(0,0,0,0.5);
   }
 }
-.card {
-  margin: 0 auto;
-  max-width: 700px;
-  max-height: 600px;
-}
+
 .example {
   position: relative;
 
