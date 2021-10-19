@@ -32,7 +32,6 @@ gem 'sorcery'
 gem 'faker'
 gem "aws-sdk-s3", require: false
 gem 'seed-fu'
-gem 'pagy'
 gem 'ransack'
 gem 'kaminari'
 gem "chartkick"

@@ -11,7 +11,6 @@
    const componentId = [];
    const genreId = [];
  
-   console.log($link)
    const handleClick = (e) => {
      e.preventDefault();
    }
@@ -19,7 +18,6 @@
    // 成分画像をクリックしたときの動作
    let count = 0;
    button.disabled = true
-   console.log(count)
    for(let i = 0; i < 3; i++) {
      $link[i].addEventListener('click', (e) => {
        handleClick(e)
@@ -79,4 +77,5 @@
        });
      });
    }
+
 })();
