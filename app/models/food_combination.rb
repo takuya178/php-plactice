@@ -17,4 +17,5 @@ class FoodCombination < ApplicationRecord
   def get_salt
     { "組み合わせ成分値": sprintf("%.1f", main.salt + sub.salt) }
   end  
+
 end

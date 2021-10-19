@@ -5,17 +5,13 @@
   const normalbtn = document.getElementById('js-normalbtn');
   const ngbtn = document.getElementById('js-ngbtn');
   const contents = document.querySelectorAll('#js-contents');
-  const MAX_SCROLL_LENGTH = 3;
+  const table = document.getElementById('food_table');
+  console.log(table)
+  const ngfood = document.getElementById('js-ngfood');
 
-  
-// 「組み合わせ」ボタンと「成分量が多い組み合わせ」ボタン
-  normalbtn.addEventListener('click', () => {
-    normal.style.display = 'block'
-    abnormal.style.display = 'none'
-  });
-  ngbtn.addEventListener('click', () => {
-    normal.style.display = 'none'
-    abnormal.style.display = 'block'
+
+  ngfood.addEventListener('click', () => {
+    location.href = '/ng_food_combinations' + location.search
   });
 
 })();

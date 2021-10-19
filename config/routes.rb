@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   get 'food_combinations', to: 'food_combinations#index'
+  get 'ng_food_combinations', to: 'food_combinations#ng'
 
   namespace :admin do
     root 'dashboards#index'

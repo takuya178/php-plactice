@@ -19,24 +19,6 @@
         <% end %>
       <% end %>
     </div>
-    <div class="food_select container" id="js-ngselect" style="display: none">
-      <div class="food_combi_component_text_inner">
-        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
-      </div>
-      <% @foods.each do |food| %>
-        <% if food.main.genre == 'noodle' && food.main.salt + food.sub.salt >= 3.1 %>
-          <div class="food_combi_contain">
-            <%= render 'ngdetails', food: food %>
-            <div class="food_graph">
-              <% chart = [
-                { name: '塩分(g)', data: food.get_salt }
-              ] %>
-              <%= bar_chart chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
   </div>
 
 <% elsif @salt && @component_params.size == 1 && @rice %>
@@ -50,24 +32,6 @@
         <% if food.main.genre == 'rice' && food.main.salt + food.sub.salt <= 3 %>
           <div class="food_combi_contain">
             <%= render 'details', food: food %>
-            <div class="food_graph">
-              <% chart = [
-                { name: '塩分(g)', data: food.get_salt }
-              ] %>
-              <%= bar_chart chart, colors: ["#b00", "#666"], min: 0, max: 100 %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="food_select container" id="js-ngselect" style="display: none">
-      <div class="food_combi_component_text_inner">
-        <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
-      </div>
-      <% @foods.each do |food| %>
-        <% if food.main.genre == 'rice' && food.main.salt + food.sub.salt >= 3.1 %>
-          <div class="food_combi_contain">
-            <%= render 'ngdetails', food: food %>
             <div class="food_graph">
               <% chart = [
                 { name: '塩分(g)', data: food.get_salt }
