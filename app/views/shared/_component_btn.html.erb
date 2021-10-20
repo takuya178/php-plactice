@@ -1,0 +1,11 @@
+<div class="food_component_btn">
+  <div class="food_combi_sort food_combi_btn">
+    <%= sort_link(@q, :sugar, '糖質', { default_order: :asc }, { class: "food_component_select" }) %>
+  </div>
+  <div class="food_combi_sort food_combi_btn">
+    <%= sort_link(@q, :lipid, '脂質', { default_order: :asc }, { class: "food_component_select" }) %>
+  </div>
+  <div class="food_combi_sort food_combi_btn">
+    <%= sort_link(@q, :salt, '塩分', { default_order: :asc }, { class: "food_component_select" }) %>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 
 
   ngfood.addEventListener('click', () => {
-    location.href = '/ng_food_combinations' + location.search
+    location.href = '/overdose_food_combinations' + location.search
   });
 
 })();

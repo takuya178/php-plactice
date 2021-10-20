@@ -1,37 +1,35 @@
-@mixin main_title_box($color) {
-  font-size: 1.2em;
-  background: $color;
-  padding: 4px;
-  text-align: center;
-  color: #FFF;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  width: 100%;
-}
-.mains {
+.food_top {
   background-color: #F0E5CF;
-}
-.main_title {
-  @include main_title_box(orange)
-}
-.food_combi_border_blue {
-  border: dotted 2px $text-color
-}
-.main_menu_inner {
-  width: 100%;
-  margin: 100px auto;
+  font-size: 20px;
 }
 .main_text_box {
   background-color: #fff;
 }
 .pagination {
   justify-content: center;
+  margin: 40px 0;
 }
 .page-item.active .page-link {     
-  background: orange;     /*背景の色を変える*/
-  border-radius: 15px;     /*角を丸くする*/
+  background: orange;
+  border-radius: 15px;
 }
 .page-item .page-link {
   border: none;
   background-color: #F0E5CF;
+}
+.food_combi_main img {
+  width: 240px;
+  height: 200px;
+  object-fit: cover;
+}
+.food-card {
+  width: 70%;
+}
+@media (max-width: 480px) {
+  .food_top {
+    font-size: 15px;
+  }
+  .food-card {
+    width: 100%;
+  }
 }

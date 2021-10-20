@@ -1,27 +1,20 @@
-<div class="mains">
+<div class="food_top">
   <div class="container">
-    <%= render 'search_form', url: mains_path %>
+    <%= render 'shared/component_btn', url: mains_path %>
     <%= paginate @mains %> 
-    <% @mains.each do |main, i| %>
-      <div class="main_menu_inner" id="js-main">
-        <div class="main_title">組み合わせ</div>
-        <div class="main_text_box">
-          <div class="main_menu">
-              メイン：<%= main.name %>
-          </div>
-          <div class="food_combi_border_blue"></div>
-          <div class="main_text">
-            カロリー： <%= main.calorie %> cal
-          </div>
-          <div class="main_text">
-            炭水化物： <%= main.sugar %>g
-          </div>
-          <div class="main_text">
-            脂質： <%= main.lipid %>g
-          </div>
-          <div class="main_text">
-            塩分： <%= main.salt %>g
-          </div>
+    <% @mains.each do |main| %>
+      <div class="card mx-auto mb-5 food-card">
+        <% if main.image.attached? %>
+          <%= image_tag main.image %>
+        <% else %>
+          <%= image_pack_tag("media/images/noimage.jpg") %>
+        <% end %>
+        <div class="card-body">
+          <p><%= main.name %></p>
+          <p>糖質：<%= main.sugar %>g</p>
+          <p>脂質：<%= main.lipid %>g</p>
+          <p>塩分：<%= main.salt %>g</p>
+          <p>カロリー：<%= main.calorie %>cal</p>
         </div>
       </div>
     <% end %>
