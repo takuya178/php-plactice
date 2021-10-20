@@ -18,4 +18,12 @@ class FoodCombination < ApplicationRecord
     { "組み合わせ成分値": sprintf("%.1f", main.salt + sub.salt) }
   end  
 
+class << self
+  def component_sum
+    @food.each do |food|
+      scope :sugar_sum, -> { food.main.sugar + food.sub.sugar }
+    end
+  end
+end
+
 end

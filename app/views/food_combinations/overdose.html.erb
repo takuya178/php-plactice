@@ -5,6 +5,7 @@
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">炭水化物81g以上の組み合わせ</p>    
       </div>
+      <%= paginate @foods %> 
       <% @foods.each do |food| %>
         <% if food.main.genre == 'noodle' && food.main.sugar + food.sub.sugar >= 81 %>
           <div class="food_combi_contain">

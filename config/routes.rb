@@ -8,18 +8,17 @@ Rails.application.routes.draw do
   get 'privacy', to: 'static_pages#privacy'
   get 'terms', to: 'static_pages#terms'
   get 'explanation', to: 'static_pages#explanation'
+  get 'overdose_food_combinations', to: 'food_combinations#overdose'
 
   resource :inquiry, only: %i[new create]
   resources :users, only: %i[new create show]
-  resources :food_combinations, only: %i[new index] do
+  resources :food_combinations, only: %i[index] do
     collection do
       get 'select', to: 'food_combinations/select'
-      resources :mains
+      resources :mains, only: %i[index]
+      resources :subs, only: %i[index]
     end
   end
-
-  get 'food_combinations', to: 'food_combinations#index'
-  get 'ng_food_combinations', to: 'food_combinations#ng'
 
   namespace :admin do
     root 'dashboards#index'

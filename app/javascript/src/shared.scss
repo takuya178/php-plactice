@@ -67,6 +67,22 @@
 
 
 // 
+// component_btn
+// 
+.food_component_btn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.food_component_select {
+  @include btn(orange);
+  display: block;
+  max-width: 125px;
+  margin: 20px auto;
+  padding: 20px 20px;
+}
+
+
+// 
 // メディアクエリ
 @media (max-width: 480px) {
   .alert-message {
@@ -104,5 +120,12 @@
   }
   .explanation_lady_inner {
     font-size: 20px;
+  }
+
+// 
+// component_btn
+// 
+  .food_component_select {
+    padding: 10px 10px;
   }
 }
