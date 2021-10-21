@@ -14,7 +14,9 @@ class FoodCombinationsController < ApplicationController
     @snack = Tag.find_by(id: genre_ids, genre: 'snack')
 
     @q = FoodCombination.ransack(params[:q])
-    @foods = @q.result(distinct: true).eager_load(:main, :sub).all.page(params[:page])
+    @foods = @q.result(distinct: true).eager_load(:main, :sub).all
+
+
   end
 
   def select; end
@@ -35,7 +37,7 @@ class FoodCombinationsController < ApplicationController
     @snack = Tag.find_by(id: genre_ids, genre: 'snack')
 
     @q = FoodCombination.ransack(params[:q])
-    @foods = @q.result(distinct: true).eager_load(:main, :sub).all.page(params[:page])
+    @foods = @q.result(distinct: true).eager_load(:main, :sub).all
   end
 
 end
