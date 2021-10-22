@@ -10,6 +10,10 @@
   font-weight: bold;
   letter-spacing: 0.05em;
 }
+.food_combination {
+  background-color: #F0E5CF;
+  font-size: 25px;
+}
 .food_combi_flex img {
   width: 300px;
   height: 200px;
@@ -26,12 +30,10 @@
   width: 100%;
 }
 .food_combi_text {
-  font-size: 25px;
   text-align: center;
   padding: 20px;
 }
 .food_combi_compo {
-  font-size: 40px;
   margin: auto 40px
 }
 .food_combi_menu_text {
@@ -51,7 +53,6 @@
 .food_combi_menu_inner {
   display: flex;
   text-align: center;
-  font-size: 25px;
   padding: 20px;
   justify-content: space-around;
 }
@@ -67,21 +68,19 @@
 .food_combi_btn {
   display: flex;
   justify-content: center;
-
+  margin: 50px 0;
   .food_combi_normal_select {
     @include btn($text-color);
-    display: block;
-    max-width: 125px;
-    margin: 20px auto;
-    padding: 10px 15px;
-    line-height: 3;
   }
   .food_combi_ng_select {
     @include btn($ng-btn);
+  }
+  .food_combi_normal_select, .food_combi_ng_select {
     display: block;
-    max-width: 125px;
+    width: 100%;
+    text-align: center;
     margin: 20px auto;
-    padding: 10px 10px;
+    padding: 35px;
   }
 }
 .food_combi_border_red {
@@ -96,7 +95,6 @@
 .food_combi_ngtext {
   text-align: center;
   font-weight: bold;
-  font-size: 30px;
   margin-bottom: 10px;
 }
 .scroll {
@@ -105,6 +103,80 @@
 	height:300px;
 }
 
+// 
+// 栄養基準
+//
+.border {
+  border: 5px solid #ffc107 !important;
+}
+.explanation_inner {
+  font-size: 20px;
+  li {
+    margin-bottom: 50px;
+  }
+}
+.top_container {
+  padding: 13px;
+}
+.navbar {
+  padding: 30px;
+}
+.container-fluid {
+  font-size: 20px;
+}
+.explanation_nutrition {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+// 
+// スクロールトップ
+// 
+.js-scroll-fadein {
+  transition: opacity 1s;
+  visibility: hidden;
+  opacity: 0;
+  &.is-fadein {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.arrow{
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  color: #fff;
+  cursor: pointer;
+  // background-color: #c4c4c4;
+  border-radius: 35px;
+  padding: 35px;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    opacity: .8;
+    bottom: 15px;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
+  }
+  &:after {
+    content: "";
+    width: 35px;
+    height: 35px;
+    border-top: solid 6px #fff;
+    border-right: solid 6px #fff;
+    transform: rotate(-45deg);
+    position:  absolute;
+    left: 18px;
+  }
+  &:after {
+    top: 25px;
+  }
+}
+.normal {
+  background-color: $text-color;
+}
+.overdose {
+  background-color: $ng-btn;
+}
 
 
 // 
@@ -146,6 +218,9 @@
   // 
   // food_select画面
   // 
+  .food_combination {
+    font-size: 18px;
+  }
   .food_combi_flex img {
     width: 290px;
     height: 200px;
@@ -162,18 +237,16 @@
     width: 100%;
   }
   .food_combi_menu_inner {
+    font-size: 18px;
     display: block;
     padding: 10px 10px;
-    font-size: 17px;
     margin-bottom: 15px;
   }
   .food_combi_text {
     text-align: left;
-    font-size: 14px;
     padding: 15px;
   }
   .food_combi_compo {
-    font-size: 40px;
     margin: 25px auto
   }
   .food_combi_border_red {
@@ -188,13 +261,42 @@
   .food_combi_ngtext {
     text-align: center;
     font-weight: bold;
-    font-size: 19px;
     margin-bottom: 10px;
   }
+  .food_combi_btn {
+    margin: 20px 0;
+    .food_combi_normal_select, .food_combi_ng_select {
+      padding: 25px;
+    }
+  }
+  .explanation_nutrition {
+    font-size: 18px;
+  }
+
+// 
+// 栄養基準
+//
+.explanation_nutrition {
+  display: block;
 }
-  
-  
-  
+.explanation_inner {
+  li {
+    margin-bottom: 50px;
+  }
+}
+.explanation_male {
+  margin-bottom: 30px;
+  p {
+    margin: 0;
+  }
+}
+.explanation_lady {
+  p {
+    margin: 0;
+  }
+}
+}
+
   /*299px以下で適用する内容*/
   @media (max-width: 320px) {
     .food_combi_flex img {
