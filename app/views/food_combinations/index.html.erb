@@ -1,7 +1,7 @@
 <% if @sugar && @component_params.size == 1 && @noodle %>
-  <div class="food_select_back" id='tab'>
-    <%= render 'button' %>
+  <div class="food_combination" id='tab'>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">炭水化物80g以下の組み合わせ</p>    
       </div>
@@ -22,9 +22,9 @@
   </div>
 
 <% elsif @sugar && @component_params.size == 1 && @rice %>
-  <div class="food_select_back" id='tab'>
-    <%= render 'button' %>
+  <div class="food_combination" id='tab'>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">炭水化物80g以下の組み合わせ</p>    
       </div>
@@ -45,9 +45,9 @@
   </div>
 
 <% elsif @lipid && @component_params.size == 1 && @noodle %>
-  <div class="food_select_back" id='tab'>
-    <%= render 'button' %>
+  <div class="food_combination" id='tab'>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">脂質25g以下の組み合わせ</p>    
       </div>
@@ -68,9 +68,9 @@
   </div>
 
 <% elsif @lipid && @component_params.size == 1 && @rice %>
-  <div class="food_select_back" id='tab'>
-    <%= render 'button' %>
+  <div class="food_combination" id='tab'>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">脂質25g以下の組み合わせ</p>    
       </div>
@@ -91,9 +91,9 @@
   </div>
 
 <% elsif @salt && @component_params.size == 1 && @noodle %>
-  <div class="food_select_back" id='tab'>
-    <%= render 'button' %>
+  <div class="food_combination" id='tab'>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">塩分3g以下の組み合わせ</p>    
       </div>
@@ -114,9 +114,9 @@
   </div>
 
 <% elsif @salt && @component_params.size == 1 && @rice %>
-  <div class="food_select_back" id='tab'>
-    <%= render 'button' %>
+  <div class="food_combination" id='tab'>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">塩分3g以下の組み合わせ</p>    
       </div>
@@ -137,9 +137,9 @@
   </div>
 
 <% elsif @sugar && @lipid && @component_params.size == 2 && @noodle %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">炭水化物80g以下、脂質25g以下の組み合わせ</p> 
       </div>
@@ -161,9 +161,9 @@
   </div>
 
 <% elsif @sugar && @lipid && @component_params.size == 2 && @rice %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">炭水化物80g以下、脂質25g以下の組み合わせ</p>
       </div>
@@ -185,9 +185,9 @@
   </div>
 
 <% elsif @lipid && @salt && @component_params.size == 2 && @noodle %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">脂質25g以下、塩分3g以下の組み合わせ</p>
       </div>
@@ -209,9 +209,9 @@
   </div>
 
 <% elsif @lipid && @salt && @component_params.size == 2 && @rice %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">脂質25g以下、塩分3g以下の組み合わせ</p>
       </div>
@@ -233,9 +233,9 @@
   </div>
 
 <% elsif @sugar && @salt && @component_params.size == 2 && @noodle %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">糖質80g以下、塩分3g以下の組み合わせ</p>
       </div>
@@ -257,9 +257,9 @@
   </div>
 
 <% elsif @sugar && @salt && @component_params.size == 2 && @rice %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">糖質80g以下、塩分3g以下の組み合わせ</p>
       </div>
@@ -281,9 +281,9 @@
   </div>
 
 <% elsif @sugar && @lipid && @salt && @noodle %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">糖質80g以下、脂質25g以下、塩分3g以下の組み合わせ</p> 
       </div>
@@ -306,9 +306,9 @@
   </div>
 
 <% elsif @sugar && @lipid && @salt && @rice %>
-  <div class="food_select_back">
-    <%= render 'button' %>
+  <div class="food_combination">
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">糖質80g以下、脂質25g以下、塩分3g以下の組み合わせ</p>  
       </div>
@@ -331,4 +331,5 @@
   </div>
 <% end %>
 
+<div id="js-scroll-fadein" class="js-scroll-fadein arrow normal"></div>  
 <%= javascript_pack_tag 'home/food' %>
