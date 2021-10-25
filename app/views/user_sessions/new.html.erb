@@ -15,12 +15,12 @@
           </div>
         </div>
         <div class="form-group">
-        <div class="contact-item-title">
-          <%= f.label :password, User.human_attribute_name(:password) %>
-        </div>
-        <div class="contact-item-input">
-          <%= f.password_field :password, class: 'form-control' %>
-        </div>
+          <div class="contact-item-title">
+            <%= f.label :password, User.human_attribute_name(:password) %>
+          </div>
+          <div class="contact-item-input">
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
         </div>
         <div class="contact-button">
           <%= f.submit t('.title'), class: 'btn-square-shadow login' %>

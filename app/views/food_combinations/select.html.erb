@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <div class="food-select-top">
 <div class="food-select-inner container">
   <div class="select" id="tab">
@@ -44,8 +45,6 @@
         </button>
       </div>
     </div>
-
-
     <div class="genre" id="js-genre">
       <div class="food-select-message">
         <p class='select_message_top mb-xl-30 .mb-sm-10'>食べたいジャンルを選択してください</p>
@@ -78,6 +77,5 @@
   </div>
 </div>
 </div>
-
 
 <%= javascript_pack_tag 'home/select' %>

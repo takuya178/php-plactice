@@ -1,6 +1,8 @@
+<% content_for(:title, t('.title')) %>
 <% if @sugar && @component_params.size == 1 && @noodle %>
   <div class="food_combination" id='tab'>
     <div class="food_select container" id='js-normalselect' style="display: block">
+      <%= render 'search_form' %>
       <%= render 'button' %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">炭水化物80g以下の組み合わせ</p>    

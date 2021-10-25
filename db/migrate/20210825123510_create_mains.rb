@@ -1,13 +1,13 @@
 class CreateMains < ActiveRecord::Migration[6.0]
   def change
     create_table :mains do |t|
-      t.string :name
-      t.string :image
+      t.string :name, null: false
+      t.string :image, null: false
       t.integer :component, null: false, default: 0
-      t.integer :calorie
-      t.float :sugar
-      t.float :lipid
-      t.float :salt
+      t.integer :calorie, null: false
+      t.float :sugar, null: false
+      t.float :lipid, null: false
+      t.float :salt, null: false
 
       t.timestamps
     end

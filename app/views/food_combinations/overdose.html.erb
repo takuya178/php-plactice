@@ -1,3 +1,4 @@
+<% content_for(:title, t('.title')) %>
 <% if @sugar && @component_params.size == 1 && @noodle %> 
   <div class="food_combination" id='tab'>
     <div class="food_select container">
@@ -94,6 +95,7 @@
   <div class="food_combination" id='tab'>
     <div class="food_select container">
       <%= render 'button' %>
+      <%= paginate @foods %>
       <div class="food_combi_component_text_inner">
         <p class="food_combi_ngtext">塩分3.1g以上の組み合わせ</p>    
       </div>
