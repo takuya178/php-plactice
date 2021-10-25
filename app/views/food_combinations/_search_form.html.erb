@@ -1,0 +1,6 @@
+<%= search_form_for @q, url: request.url do |f| %>
+  <%= f.label :name_cont, 'ユーザー名' %>
+  <%= f.search_field :prices_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>

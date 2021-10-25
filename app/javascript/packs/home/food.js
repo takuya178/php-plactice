@@ -15,16 +15,15 @@
     location.href = '/overdose_food_combinations' + location.search
   });
 
-
   // スクロールトップ
 
   //スクロール量を取得する関数
   const getScrolled = () => {
     let ref;
     if(window.pageYOffset !== undefined) {
-      ref=window.pageYOffset;
+      ref = window.pageYOffset;
     }else {
-      ref=document.documentElement.scrollTop;
+      ref = document.documentElement.scrollTop;
     }
     return ref;
   };

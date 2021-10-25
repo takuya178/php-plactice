@@ -1,5 +1,5 @@
 class Main < ApplicationRecord
-  has_many :food_combinations
+  has_many :food_combinations, dependent: :destroy
   has_many :subs, through: :food_combinations
 
   has_one_attached :image
