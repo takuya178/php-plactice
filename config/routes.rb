@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get 'overdose_food_combinations', to: 'food_combinations#overdose'
 
   resource :inquiry, only: %i[new create]
-  resources :users, only: %i[new create show]
   resources :food_combinations, only: %i[index] do
     collection do
       get 'select', to: 'food_combinations/select'
