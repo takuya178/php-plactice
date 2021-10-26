@@ -86,13 +86,6 @@ a {
 // // 
 // // top-bottom
 // // 
-.top-bottom-page {
-  background-color: #F0E5CF;
-}
-.top-button {
-  display: flex;
-  justify-content: space-between;
-}
 .btn-login-shadow {
   @include btn($text-color)
 }
@@ -113,34 +106,6 @@ a {
 }
 
 
-
-// 
-// concept
-// 
-.concept-inner {
-  display: flex;
-}
-.concept-img {
-  width: 700px;
-  margin-right: 30px;
-}
-.concept-text-main {
-  margin-bottom: 30px;
-  h2 {
-    font-size: 40px;
-  }
-}
-.concept-text-sub {
-  p {
-    font-size: 20px;
-  }
-}
-.concept {
-  background-color: none;
-}
-.concept-card::before {
-  display: none;
-}
 
 // 
 // service
@@ -203,9 +168,15 @@ a {
 }
 
 
+
+
+
+
 // 
 // レスポンシブ対応
 // 
+
+
 @media (max-width: 480px){
   .container {
     padding: 20px;
@@ -266,51 +237,27 @@ a {
 // // 
 // // top-bottom
 // // 
-.btn-sub-login-shadow {
-  @include btn(#FFB319);
-  padding: 15px 3px;
-  width: 100%
-}
-.btn-login-shadow {
-  @include btn($text-color);
-  padding: 15px 23px;
-  width: 100%;
-}
-.top-button {
-  display: block;
-}
-.top-bottom-login-box {
-  margin-top: 20px;
-  font-size: 13px;
-  text-align: center;
-}
-.top-bottom-guest {
-  margin-top: 50px;
-}
+  .btn-sub-login-shadow {
+    @include btn(#FFB319);
+    padding: 15px 3px;
+    width: 100%
+  }
+  .btn-login-shadow {
+    @include btn($text-color);
+    padding: 15px 23px;
+    width: 100%;
+  }
+  .top-button {
+    display: block;
+  }
+  .top-bottom-login-box {
+    margin-top: 20px;
+    font-size: 13px;
+    text-align: center;
+  }
+  .top-bottom-guest {
+    margin-top: 50px;
+  }
 
-// 
-// concept
-// 
-.concept-inner {
-  display: block;
-}
-.concept-img {
-  max-width: 250px;
-  margin-right: 0px;
-  margin-bottom: 20px;
-}
-.concept-text-main {
-  margin-bottom: 20px;
-}
-.concept-text-main {
-  h2 {
-    font-size: 20px;
-  }
-}
-.concept-text-sub {
-  p {
-    font-size: 15px;
-  }
-}
 }
 

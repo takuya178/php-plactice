@@ -3,27 +3,15 @@ $lipid-color: #ffeb6a;
 $salt-color: #86340A;
 
 
-// @mixin btn($color) {
-//   display: block;
-//   padding: 1.2em 5em;
-//   text-decoration: none;
-//   background: $color;
-//   color: #FFF;
-//   border-bottom: solid 4px darken($color, 20%);
-//   border-radius: 3px;
-// }
-
-
 .food-select-top {
   background-color: #F0E5CF;
 }
 .food-select-message {
   text-align: center;
-  p {
+  h4 {
     margin-top: 0;
     margin-bottom: 1rem;
     color: #86340A;
-    font-size: 40px;
   }
 }
 
@@ -67,9 +55,9 @@ $salt-color: #86340A;
   }
 
 }
-@mixin select-text-md($color) {
+@mixin select-text-md {
   position: absolute;
-  font-size: 78px;
+  font-size: 70px;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%,-50%);
@@ -78,24 +66,23 @@ $salt-color: #86340A;
   margin:0;
   padding:0;
   font-weight: bold;
-  color: $color;
 }
 
 .text-select-sugar {
-  @include select-text-md($sugar-color)
+  @include select-text-md
 }
 .text-select-lipid {
-  @include select-text-md($lipid-color)
+  @include select-text-md
 }
 .text-select-salt {
-  @include select-text-md($salt-color)
+  @include select-text-md
 }
 .text-select-noodle {
-  @include select-text-md(#fff)
+  @include select-text-md
 
 }
 .text-select-rice {
-  @include select-text-md(#fff)
+  @include select-text-md
 }
 
 .filter {
@@ -159,39 +146,38 @@ $salt-color: #86340A;
 // メディアクエリ
 @media (max-width: 480px) {
 
-  @mixin select-text-sp($color) {
+  @mixin select-text-sp {
     font-size: 40px;
     font-weight: bold;
-    color: $color;
   }
 
   // selectページ
   .food-select-message {
-    p {
+    h4 {
       margin-top: 0;
       margin-bottom: 1rem;
       color: #86340A;
-      font-size: 20px;
+      font-size: 15px;
     }
   }
   .text-select {
-    @include select-text-sp(#111111)
+    @include select-text-sp
   }
   .text-select-sugar {
-    @include select-text-sp($sugar-color)
+    @include select-text-sp
   }
   .text-select-lipid {
-    @include select-text-sp($lipid-color)
+    @include select-text-sp
   }
   .text-select-salt {
-    @include select-text-sp($salt-color)
+    @include select-text-sp
   }
   .text-select-noodle {
-    @include select-text-sp(#fff)
+    @include select-text-sp
 
   }
   .text-select-rice {
-    @include select-text-sp(#fff)
+    @include select-text-sp
   }
 
   .example {

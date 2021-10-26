@@ -9,45 +9,20 @@
   </div>
 
   <!-- top-bottom --->
-  <section class="top-bottom-page">
+  <section class="top-bottom-page" style="background-color: #F0E5CF">
     <div class="top-bottom-page-inner container">
       <div class="inner">
-        <h2 class="section-title">login</h2>
-        <div class="top-button">
+        <div class="top-button d-md-flex justify-content-around">
           <div class="top-bottom-login">
             <div class="top-bottom-login-btn">
-              <%= link_to t('.login'), login_path, class: 'btn-login-shadow' %>
-            </div>
-            <div class="top-bottom-login-box">
-              <p>本サービスの正規ログイン方法です。<br> 選んだ組み合わせをカレンダーに記録することができます。（現在調整中）</p>
+              <%= link_to 'アプリを始める', select_food_combinations_path, class: 'btn-login-shadow' %>
             </div>
           </div>
           <div class="top-bottom-guest">
             <div class="top-bottom-login-btn">
-              <%= link_to t('.guest_login'), 'guest_login', method: :post, class: 'btn-sub-login-shadow' %>
-            </div>
-            <div class="top-bottom-login-box">
-              <p>ゲストユーザーとしてログインします。<br> 新規登録なしに手軽にサービスをお楽しみいただけます。</p>
+              <%= link_to '使い方説明', explanation_path, class: 'btn-sub-login-shadow' %>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- concept --->
-  <section class="concept container inner">
-  <h2 class="section-title">Concept</h2>
-    <div class="concept-inner">
-      <div class="concept-img">
-        <%= image_pack_tag("boxed.jpg", class: 'w-100') %>
-      </div>
-      <div class="concept-text-box">
-        <div class="concept-text-main">
-          <h2>普段の食事で糖質、脂質、塩分が気になる方へ。</h2>
-        </div>
-        <div class="concept-text-sub">
-          <p>コンビニ食品からあなたの気になる成分を控えた食品の組み合わせを提案します。</p>
         </div>
       </div>
     </div>
