@@ -3,7 +3,7 @@ class Admin::FoodCombinationsController < Admin::BaseController
 
   def index
     @q = FoodCombination.ransack(params[:q])
-    @foods = @q.result.all
+    @foods = @q.result(distinct: true).eager_load(:main, :sub).all
   end
 
   def new

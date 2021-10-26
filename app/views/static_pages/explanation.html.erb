@@ -1,15 +1,42 @@
- <!-- service --->
-  <section class="service service">
-    <div class="service-inner container">
-      <div class="inner">
-        <h2 class="section-title">Service</h2>
-          <ol class="explanation_inner">
-            <li>炭水化物、脂質、塩分の中からご自身の気になる成分を選択してください。（複数選択可能です）</li>
-            <li>食べたいジャンルを選択してください。麺類、ご飯類のどちらかからお選びいただけます。</li>
-            <li>選んでいただいたジャンルをメイン食品とし、それに合う食品（プラス一品）と一緒に表示します。</li>
-          </ol>
-        <br>
-        <br>
+<div class="explanation">
+  <div class="explanation_inner">
+    <div class="explanation_box" style="background-color: #fff">
+      <div class="explanation_box_inner d-md-flex justify-content-center align-items-center container">
+        <div class="explanation_img  col col-md-4">
+          <%= image_pack_tag("media/images/explanation.jpg", class: "w-100", size: '300') %>
+        </div>
+        <div class="explanation_text col col-md-5">
+          <h3 class="mb-5 text-h6 text-md-h5 fw-bolder fs-3">控えたい成分と食べたいジャンルを選択</h3>
+          <h6 class="lh-lg fs-6">炭水化物、脂質、塩分の3種類から控えたい成分を選択いただけます。また麺類、ご飯類から食べたいジャンルをお選びください。</h6>
+        </div>
       </div>
     </div>
-  </section>
+    <div class="explanation_box" style="background-color: #F0E5CF">
+      <div class="explanation_box_inner d-md-flex justify-content-center flex-row-reverse align-items-center container">
+        <div class="explanation_img  col col-md-4">
+          <%= image_pack_tag("media/images/explanation.jpg", class: "w-100", size: '300') %>
+        </div>
+        <div class="explanation_text col col-md-5">
+          <h3 class="mb-5 text-h6 text-md-h5 fw-bolder fs-3">組み合わせ一覧から選ぼう</h3>
+          <h6 class="lh-lg fs-6">控えたい成分、食べたいジャンルの条件から組み合わせ一覧が表示され、組み合わせ価格、カロリー、控えたい成分のg数が表示されます。</h6>
+        </div>
+      </div>
+    </div>
+    <div class="explanation_box" style="background-color: #fff">
+      <div class="explanation_box_inner d-md-flex justify-content-center align-items-center container">
+        <div class="explanation_img  col col-md-4">
+          <%= image_pack_tag("media/images/explanation_bottom.jpg", class: "w-100", size: '200x500') %>
+        </div>
+        <div class="explanation_text col col-md-5">
+          <h3 class="mb-5 text-h6 text-md-h5 fw-bolder fs-3">お問い合せについて</h3>
+          <h6 class="lh-lg fs-6">このサービスをより充実させるため、「こんな組み合わせがあるよ」や「機能を増やして欲しい」等のお問い合せを頂けると幸いです。</h6>
+          <div class="top-bottom-login">
+            <div class="top-bottom-login-btn">
+              <%= link_to 'お問い合せページ', new_inquiry_path, class: 'btn-login-shadow' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
