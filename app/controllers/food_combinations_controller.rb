@@ -1,6 +1,4 @@
 class FoodCombinationsController < ApplicationController
-  skip_before_action :require_login
-
   def index
     @component_params = params[:component]
     genre_params = params[:genre]
