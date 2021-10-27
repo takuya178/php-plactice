@@ -1,6 +1,4 @@
-class InquiriesController < ApplicationController
-  skip_before_action :require_login
-  
+class InquiriesController < ApplicationController  
   def new
     @inquiry = Inquiry.new
   end

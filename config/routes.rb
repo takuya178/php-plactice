@@ -24,4 +24,5 @@ Rails.application.routes.draw do
     resources :food_combinations
   end
 
+  get '*path', to: 'application#error_404'
 end
