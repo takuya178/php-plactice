@@ -2,12 +2,21 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
-      board: '掲示板'
     attributes:
-      user:
-        name: '名前'
-        email: 'メールアドレス'
-        password: 'パスワード'
-        password_confirmation: 'パスワード確認'
       inquiry:
         message: 'お問合せ内容'
+      main:
+        name: '商品名'
+        image: '商品画像'
+        genre: 'ジャンル'
+        calorie: 'カロリー'
+        sugar: '炭水化物'
+        lipid: '脂質'
+        salt: '塩分'
+      sub:
+        name: '商品名'
+        image: '商品画像'
+        calorie: 'カロリー'
+        sugar: '炭水化物'
+        lipid: '脂質'
+        salt: '塩分'

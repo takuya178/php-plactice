@@ -1,0 +1,70 @@
+<div class="food_create">
+  <div class="food_create_inner d-md-flex justify-content-center container">
+    <div class="food_create_main border border-primary p-4">
+      <h2>メイン</h2>
+      <%= form_with model: @main, local: true do |f| %>
+        <div class="input-form">
+          <%= f.label :image, class: "text-info" %>
+          <%= f.file_field :image, class: "form-control" %>
+          <%#= image_tag @main.preview(resize_to_limit: [100, 100]) %> 
+        </div>
+        <div class="input-form shadow-none">
+          <%= f.label :name, class: "text-info" %><br>
+          <%= f.text_field :name %>
+          <%= render 'shared/error_messages', object: f.object, text: :name %>
+        </div>
+        <div class="input-form">
+          <%= f.label :genre, class: "text-info" %><br>
+          <%= f.select :genre, Main.genres.keys.to_a, {} %>
+        </div>
+        <div class="input-form">
+          <%= f.label :calorie, class: "text-info" %><br>
+          <%= f.text_field :calorie %> cal
+        </div>
+        <div class="input-form">
+          <%= f.label :sugar, class: "text-info" %><br>
+          <%= f.text_field :sugar %> g
+        </div>
+        <div class="input-form">
+          <%= f.label :lipid, class: "text-info" %><br>
+          <%= f.text_field :lipid %> g
+        </div>
+        <div class="input-form">
+          <%= f.label :salt, class: "text-info" %><br>
+          <%= f.text_field :salt %> g
+        </div>
+    </div>
+    <div class="food_create_cross fs-2">x</div>
+    <div class="food_create_sub border border-primary p-4">
+    <h2>プラス一品</h2>
+      <%= f.fields_for :subs do |sub| %>
+        <div class="input-form">
+          <%= sub.label :name, class: "text-info" %><br>
+          <%= sub.text_field :name %>
+        </div>
+        <div class="input-form">
+          <%= sub.label :image, class: "text-info" %>
+          <%= sub.file_field :image, class: "form-control" %> 
+        </div>
+        <div class="input-form">
+          <%= sub.label :calorie, class: "text-info" %><br>
+          <%= sub.text_field :calorie %> cal
+        </div>
+        <div class="input-form">
+          <%= sub.label :sugar, class: "text-info" %><br>
+          <%= sub.text_field :sugar %> g
+        </div>
+        <div class="input-form">
+          <%= sub.label :lipid, class: "text-info" %><br>
+          <%= sub.text_field :lipid %> g
+        </div>
+        <div class="input-form">
+          <%= sub.label :salt, class: "text-info" %><br>
+          <%= sub.text_field :salt %> g
+        </div>
+      <% end %>
+    </div>
+  </div>
+      <%= f.submit "登録" %>
+    <% end %>
+</div>

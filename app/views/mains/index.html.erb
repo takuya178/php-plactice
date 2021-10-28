@@ -2,6 +2,7 @@
   <div class="container">
     <%= render 'shared/component_btn', url: mains_path %>
     <%= paginate @mains %> 
+    <%= link_to '組み合わせ選択', new_main_path %>
     <% @mains.each do |main| %>
       <div class="card mx-auto mb-5 food-card">
         <% if main.image.attached? %>
@@ -15,6 +16,7 @@
           <p>脂質：<%= main.lipid %>g</p>
           <p>塩分：<%= main.salt %>g</p>
           <p>カロリー：<%= main.calorie %>cal</p>
+          <%= link_to '詳細ぺーじ', main_path(main) %>
         </div>
       </div>
     <% end %>

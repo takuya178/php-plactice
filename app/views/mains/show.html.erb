@@ -1,0 +1,30 @@
+<div class="food_top">
+  <div class="container">
+
+  
+    <%#= render 'shared/component_btn', url: mains_path %>
+    <%#= paginate @mains %> 
+    <% unless @main.subs.empty? %>
+      <% @main.subs.each do |sub| %>
+        <div class="card mx-auto mb-5 food-card">
+          <% if sub.image.attached? %>
+            <%= image_tag sub.image %>
+          <% else %>
+            <%= image_pack_tag("media/images/noimage.jpg") %>
+          <% end %>
+          <div class="card-body">
+            <p><%= sub.name %></p>
+            <p>糖質：<%= sub.sugar %>g</p>
+            <p>脂質：<%= sub.lipid %>g</p>
+            <p>塩分：<%= sub.salt %>g</p>
+            <p>カロリー：<%= sub.calorie %>cal</p>
+            <%#= link_to '詳細ぺーじ', main_path(main) %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>関連付けはありません</p>
+    <% end %>
+    <%#= paginate @mains %> 
+  </div>
+</div>

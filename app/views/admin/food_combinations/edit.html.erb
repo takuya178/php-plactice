@@ -16,7 +16,7 @@
           <%= f.label :prices, class: "text-info" %><br>
           <%= f.text_field :prices, value: @food.prices %>
         </div>
-        <%= image_tag @food.image, size: '300x400', class: 'card-img-top' %>
+        <%= image_tag @food.image, size: '300x300', class: 'card-img-top' %>
         <div class="form-group">
           <%= f.label :stores, class: "text-info" %><br>
            <%= f.select :stores, FoodCombination.stores.keys.to_a, {} %>

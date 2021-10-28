@@ -42,4 +42,8 @@ class FoodCombinationsController < ApplicationController
     @foods = @q.result(distinct: true).eager_load(:main, :sub).all
   end
 
+  def show
+    @food = FoodCombination.find(params[:id])
+  end
+
 end
