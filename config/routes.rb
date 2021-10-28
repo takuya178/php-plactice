@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :food_combinations, only: %i[index] do
     collection do
       get 'select', to: 'food_combinations/select'
-      resources :mains, only: %i[index]
+      resources :mains
       resources :subs, only: %i[index]
     end
   end
@@ -24,5 +24,5 @@ Rails.application.routes.draw do
     resources :food_combinations
   end
 
-  get '*path', to: 'application#error_404'
+  # get '*path', to: 'application#error_404'
 end

@@ -12,7 +12,6 @@ ja:
   static_pages:
     home:
       login: 'ログイン'
-      guest_login: 'ゲストログイン'
   views:
     pagination:
       first: <i class="fas fa-angle-double-left"></i>
@@ -20,23 +19,6 @@ ja:
       previous: <i class="fas fa-angle-left"></i>
       next: <i class="fas fa-angle-right"></i>
       truncate: "..."
-  users:
-    new:
-      title: 'ユーザー登録'
-      email: 'メールアドレス'
-      password: 'パスワード'
-      to_login_page: 'ログインページへ'
-    create:
-      success: 'ユーザー登録が完了しました'
-      fail: 'ユーザー登録に失敗しました'
-  user_sessions:
-    new:
-      title: 'ログイン'
-      to_register_page: '登録ページへ'
-      password_forget: 'パスワードをお忘れの方はこちら'
-    create:
-      success: 'ログインしました'
-      fail: 'ログインに失敗しました'
   food_combinations:
     index:
       title: '組み合わせ一覧'

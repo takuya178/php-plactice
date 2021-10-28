@@ -25,6 +25,17 @@
 .food-card {
   width: 70%;
 }
+
+// 
+// 組み合わせ作成ページ
+// 
+.food_create_cross {
+  margin: auto 50px;
+}
+.input-form {
+  margin-top: 20px;
+}
+
 @media (max-width: 480px) {
   .food_top {
     font-size: 15px;
