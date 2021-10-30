@@ -76,12 +76,16 @@
   max-width: 80%;
   width: 60%;
 }
-// .text-info {
-//   margin-top: 10px;
-//   background-color: rgba(62, 161, 209, 0.8);
-//   color: #fff;
-//   padding: 10px;
-// }
+.food_create_preview_img {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+}
+.food_create_no_img {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+}
 
 @media (max-width: 480px) {
   .food_top {
@@ -89,5 +93,14 @@
   }
   .food-card {
     width: 100%;
+  }
+
+  .food_create_preview_img {
+    width: 100%;
+    height: 100%;
+  }
+  .food_create_no_img {
+    width: 100%;
+    height: 100%;
   }
 }
