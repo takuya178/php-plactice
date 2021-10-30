@@ -3,6 +3,7 @@
     constructor(obj) {
       const $file = document.getElementById(obj.hookId);
       this.$image = document.getElementById(obj.hookImg);
+      this.$NoImage = document.getElementById(obj.hookNoImg);
 
       $file.addEventListener('change', (e) => {
         this.previewImg(e);
@@ -10,8 +11,7 @@
     }
     previewImg(e) {
       // // no-imgをdisplay:noneにする
-      const $noImg = document.getElementById('js-no-img');
-        $noImg.style.display = 'none';
+        this.$NoImage.style.display = 'none';
 
       // 添付した画像にクラスやデータを付与
       const createImage = (data) => {
@@ -39,12 +39,14 @@
   const MainPreview = new Preview({
     hookId: 'main_image',
     hookImg: 'js-main-image',
+    hookNoImg: 'js-main-no-img'
   })
 
   // サブのプレビュー
   const SubPreview = new Preview({
     hookId: 'main_subs_attributes_0_image',
     hookImg: 'js-sub-image',
+    hookNoImg: 'js-sub-no-img'
   })
 
 })();

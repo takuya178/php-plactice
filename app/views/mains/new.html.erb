@@ -1,14 +1,18 @@
-<%= form_with model: @main, url: mains_path, method: :post, local: true do |f| %>
-  <div class="food_create">
+<div class="food_create" style="background-color: #F0E5CF;">
+  <%= form_with model: @main, url: mains_path, method: :post, local: true do |f| %>
     <div class="food_create_inner d-md-flex justify-content-center container">
       <div class="food_create_main">
           <h2 class="food_create_title">メイン</h2>
           <div class="food_create_form_box p-4">
             <div class="input-form">
-              <%= f.label :image, class: "text-info" %>
-              <%= f.file_field :image, class: "form-control food_create_image" %>
+            <label class="d-block">
+              <span class="btn p-2 w-100 food_create_img_btn">
+                <i class="fas fa-camera-retro"></i> 画像を選択する
+                <%= f.file_field :image, class: "form-control", style: "display:none" %>
+              </span>
+            </label>
               <div id="js-main-image" class="text-center"></div>
-              <div class="food_create_no_img_box text-center" style="display: block;" id= "js-no-img"><%= image_pack_tag("media/images/noimage.jpg", class: 'food_create_no_img') %></div>
+              <div class="food_create_no_img_box text-center" style="display: block;" id= "js-main-no-img"><%= image_pack_tag("media/images/noimage.jpg", class: 'food_create_no_img') %></div>
               <%= render 'shared/error_messages', object: f.object, text: :image %>
             </div>
             <div class="food_create_form">
@@ -53,13 +57,19 @@
       </div>
       <div class="food_create_cross fs-2">x</div>
       <div class="food_create_sub">
-      <h2 class="food_create_title">プラス一品</h2>
         <%= f.fields_for :subs do |sub| %>
+        <h2 class="food_create_title">プラス一品</h2>
         <div class="food_create_form_box p-4">
           <div class="input-form">
-            <%= sub.label :image, class: "text-info" %>
-            <%= sub.file_field :image, class: "form-control" %> 
-            <div id="js-sub-image"></div>
+            <label class="d-block">
+              <span class="btn p-2 w-100 food_create_img_btn">
+                <i class="fas fa-camera-retro"></i> 画像を選択する
+                <%= sub.file_field :image, class: "form-control", style: "display:none" %>
+              </span>
+            </label>
+            <div id="js-sub-image" class="text-center"></div>
+            <div class="food_create_no_img_box text-center" style="display: block;" id= "js-sub-no-img"><%= image_pack_tag("media/images/noimage.jpg", class: 'food_create_no_img') %></div>
+            <%= render 'shared/error_messages', object: sub.object, text: :image %>
           </div>
           <div class="food_create_form">
             <label class="food_create_label">
@@ -99,10 +109,10 @@
         <% end %>
       </div>
     </div>
-  </div>
-  <div class="food_create_btn_inner">
-    <%= f.submit '組み合わせを登録', class: "food_create_btn btn-primary shadow w-40" %>
-  </div>
-<% end %>
+    <div class="food_create_btn_inner">
+      <%= f.submit '組み合わせを登録', class: "food_create_btn btn-primary shadow w-40" %>
+    </div>
+  <% end %>
+</div>
 
 <%= javascript_pack_tag 'home/preview' %>
