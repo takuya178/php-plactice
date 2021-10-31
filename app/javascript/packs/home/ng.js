@@ -1,3 +1,4 @@
+(() => {
 const normalbtn = document.getElementById('js-normalbtn');
 const scroll = document.getElementById( 'js-scroll-fadein' );
 
@@ -34,3 +35,4 @@ normalbtn.addEventListener('click', () => {
   scroll.addEventListener('click', () => {
     scrollTop();
   })
+})();

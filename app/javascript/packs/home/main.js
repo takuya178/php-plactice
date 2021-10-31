@@ -8,7 +8,6 @@
     });
   }
 
-  
   const io = new IntersectionObserver(cb);
   mains.forEach(el => io.observe(el))
   
